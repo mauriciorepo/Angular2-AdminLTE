@@ -1,0 +1,29 @@
+<div class="box-body">
+  <ul *ngFor="let parcelas of tableData" class ="todo-list">
+    <li>
+      <!-- drag handle -->
+      <span class="handle">
+              <i class="fa fa-ellipsis-v"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </span>
+      <!-- checkbox -->
+      <input type="checkbox" value="">
+      <!-- todo text -->
+
+      <span *ngIf="parcelas.id !== EditRowID"  (click)="Edit(parcelas.id)" class="text">{{parcelas.conta}}</span>
+      <span *ngIf="parcelas.id === EditRowID"  class="text"><input type="text"  ></span>
+
+      <!-- Emphasis label -->
+      <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+      <!-- General tools such as edit or delete-->
+      <div class="tools">
+        <i class="fa fa-edit"></i>
+        <i class="fa fa-trash-o"></i>
+      </div>
+    </li>
+
+
+
+
+  </ul>
+</div>

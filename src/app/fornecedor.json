@@ -1,0 +1,792 @@
+{
+  "fornecedor":[
+    {
+      "idfornecedores" : 1,
+      "fantasia" : "IMEL",
+      "tipo" : "J",
+      "tipoatividade" : "S",
+      "razaosocial" : "IMEL MATERIAL ELETRICO LTDA.",
+      "cnpj" : "10786028000150",
+      "ie" : "000126454",
+      "im" : "",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "50020500",
+      "logradouro" : "PRACA DAS CINCO PONTAS, 104-Lj. 104",
+      "numero" : "0",
+      "complemento" : "",
+      "bairro" : "SAO JOSE",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "8133202130",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" : "",
+      "datainc" : "",
+      "cidade" : "RECIFE",
+      "cpf" : ""
+    },
+    {
+      "idfornecedores" : 2,
+      "fantasia" : "FERREIRA COSTA IMBIRIBEIRA",
+      "tipo" : "J",
+      "tipoatividade" : "P",
+      "razaosocial" : "FERREIRA COSTA   CIA. LTDA.",
+      "cnpj" : "10230480001960",
+      "ie" : "021577560",
+      "im" : "",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "51150905",
+      "logradouro" : "AV. MAL. MASCARENHAS DE MORAIS, 2967",
+      "numero" : "2629",
+      "complemento" : "",
+      "bairro" : "IMBIRIBEIRA",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "8133388333",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" : "",
+      "datainc" : "",
+      "cidade" : "RECIFE",
+      "cpf" : ""
+    },
+    {
+      "idfornecedores" : 3,
+      "fantasia" : "ROLIMEC ROLAMENTOS",
+      "tipo" : "J",
+      "tipoatividade" : "P",
+      "razaosocial" : "ROLIMEC ROLAMENTOS LTDA",
+      "cnpj" : "01612046000124",
+      "ie" : "023214244",
+      "im" : "2678020",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "50040110",
+      "logradouro" : "RUA DO VEIGA",
+      "numero" : "362",
+      "complemento" : "",
+      "bairro" : "SANTO AMARO",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "8134135757",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" : "",
+      "datainc" : "",
+      "cidade" : "RECIFE",
+      "cpf" : ""
+    },
+    {
+      "idfornecedores" : 4,
+      "fantasia" : "RECICABOS",
+      "tipo" : "J",
+      "tipoatividade" : "S",
+      "razaosocial" : "RECICABOS COMERCIAL LTDA - PE",
+      "cnpj" : "24454886000101",
+      "ie" : "015032191",
+      "im" : "1746782",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "51170435",
+      "logradouro" : "RUA ARQUITETO LUIZ NUNES",
+      "numero" : "447",
+      "complemento" : "",
+      "bairro" : "IMBIRIBEIRA",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "8132258550",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" : "",
+      "datainc" : "",
+      "cidade" : "RECIFE",
+      "cpf" : ""
+    },
+    {
+      "idfornecedores" : 5,
+      "fantasia" : "COMERCIAL TALUJA LTDA",
+      "tipo" : "J",
+      "tipoatividade" : "P",
+      "razaosocial" : "COMERCIAL TALUJA LTDA",
+      "cnpj" : "35685239000127",
+      "ie" : "017165814",
+      "im" : "",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "51190737",
+      "logradouro" : "RUA GENERAL CAMARA",
+      "numero" : "58",
+      "complemento" : "",
+      "bairro" : "IBURA",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "34716999",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" : "",
+      "datainc" : "",
+      "cidade" : "Recife",
+      "cpf" : ""
+    },
+    {
+      "idfornecedores" : 6,
+      "fantasia" : "FERRUSI COMERCIO E SERVIÃ‡OS LTDA",
+      "tipo" : "J",
+      "tipoatividade" : "P",
+      "razaosocial" : "FERRUSI COMERCIO E SERVICOS LTDA",
+      "cnpj" : "41070285000114",
+      "ie" : "021737274",
+      "im" : "",
+      "suframa" : 0,
+      "rg" : "",
+      "ativo" : "s",
+      "cep" : "50740000",
+      "logradouro" : "Avenida CaxangÃ¡",
+      "numero" : "5775",
+      "complemento" : "",
+      "bairro" : "Varzea",
+      "ibge" : "",
+      "telefone2" : "",
+      "bloqueado" : "n",
+      "descontoprod" : 0,
+      "optantesn" : "s",
+      "retpis" : 0.00,
+      "retconfins" : 0.00,
+      "retcsll" : 0.00,
+      "retirrf" : 0.00,
+      "retinss" : 0.00,
+      "datainc2" : "1111-11-11",
+      "telefone" : "34416072",
+      "databloqueio" : "1111-11-11",
+      "datainativo" : "1111-11-11",
+      "homepage" :"" ,
+      "datainc" : "",
+      "cidade" : "Recife",
+      "cpf" : ""
+    }
+  ]}
+  {"bancos":[
+    {
+      "codbacen" : "001",
+      "nome" : "BANCO DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "003",
+      "nome" : "BANCO DA AMAZONIA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "004",
+      "nome" : "BANCO DO NORDESTE DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "019",
+      "nome" : "BANCO AZTECA DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "021",
+      "nome" : "BANESTES S.A. BANCO DO ESTADO DO ESPIRITO SANTO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "025",
+      "nome" : "BANCO ALFA S.A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "033",
+      "nome" : "BANCO SANTANDER BANESPA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "037",
+      "nome" : "BANCO DO ESTADO DO PARA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "040",
+      "nome" : "BANCO CARGILL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "041",
+      "nome" : "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "044",
+      "nome" : "BANCO BVA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "045",
+      "nome" : "BANCO OPPORTUNITY S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "047",
+      "nome" : "BANCO DO ESTADO DE SERGIPE S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "062",
+      "nome" : "HIPERCARD BANCO MULTIPLO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "063",
+      "nome" : "BANCO IBI S.A. - BANCO MULTIPLO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "065",
+      "nome" : "BANCO LEMON S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "066",
+      "nome" : "BANCO MORGAN STANLEY S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "069",
+      "nome" : "BPN BRASIL BANCO MULTIPLO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "070",
+      "nome" : "BRB - BANCO DE BRASILIA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "072",
+      "nome" : "BANCO RURAL MAIS S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "073",
+      "nome" : "BB BANCO POPULAR DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "074",
+      "nome" : "BANCO J. SAFRA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "075",
+      "nome" : "BANCO CR2 S/A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "076",
+      "nome" : "BANCO KDB DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "077",
+      "nome" : "BANCO INTERMEDIUM S/A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "079",
+      "nome" : "JBS BANCO S/A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "081",
+      "nome" : "CONCORDIA BANCO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "096",
+      "nome" : "BANCO BM&F DE SERVICOS DE LIQUIDACAO E CUSTODIA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "104",
+      "nome" : "CAIXA ECONOMICA FEDERAL",
+      "site" : ""
+    },
+    {
+      "codbacen" : "107",
+      "nome" : "BANCO BBM S/A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "151",
+      "nome" : "BANCO NOSSA CAIXA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "208",
+      "nome" : "BANCO UBS PACTUAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "212",
+      "nome" : "BANCO MATONE S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "213",
+      "nome" : "BANCO ARBI S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "214",
+      "nome" : "BANCO DIBENS S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "217",
+      "nome" : "BANCO JOHN DEERE S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "218",
+      "nome" : "BANCO BONSUCESSO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "222",
+      "nome" : "BANCO CALYON BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "224",
+      "nome" : "BANCO FIBRA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "225",
+      "nome" : "BANCO BRASCAN S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "229",
+      "nome" : "BANCO CRUZEIRO DO SUL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "230",
+      "nome" : "UNICARD BANCO MULTIPLO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "233",
+      "nome" : "BANCO GE CAPITAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "237",
+      "nome" : "BANCO BRADESCO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "241",
+      "nome" : "BANCO CLASSICO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "243",
+      "nome" : "BANCO MAXIMA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "246",
+      "nome" : "BANCO ABC BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "248",
+      "nome" : "BANCO BOAVISTA INTERATLANTICO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "249",
+      "nome" : "BANCO INVESTCRED UNIBANCO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "250",
+      "nome" : "BANCO SCHAHIN S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "254",
+      "nome" : "PARANA BANCO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "263",
+      "nome" : "BANCO CACIQUE S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "265",
+      "nome" : "BANCO FATOR S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "266",
+      "nome" : "BANCO CEDULA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "300",
+      "nome" : "BANCO DE LA NACION ARGENTINA",
+      "site" : ""
+    },
+    {
+      "codbacen" : "318",
+      "nome" : "BANCO BMG S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "341",
+      "nome" : "BANCO ITAU S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "356",
+      "nome" : "BANCO ABN AMRO REAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "366",
+      "nome" : "BANCO SOCIETE GENERALE BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "370",
+      "nome" : "BANCO WESTLB DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "376",
+      "nome" : "BANCO J.P. MORGAN S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "389",
+      "nome" : "BANCO MERCANTIL DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "394",
+      "nome" : "BANCO FINASA BMC S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "399",
+      "nome" : "HSBC BANK BRASIL S.A. - BANCO MULTIPLO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "409",
+      "nome" : "UNIBANCO-UNIAO DE BANCOS BRASILEIROS S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "412",
+      "nome" : "BANCO CAPITAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "422",
+      "nome" : "BANCO SAFRA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "453",
+      "nome" : "BANCO RURAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "456",
+      "nome" : "BANCO DE TOKYO-MITSUBISHI UFJ BRASIL S/A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "464",
+      "nome" : "BANCO SUMITOMO MITSUI BRASILEIRO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "477",
+      "nome" : "CITIBANK N.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "487",
+      "nome" : "DEUTSCHE BANK S.A. - BANCO ALEMAO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "488",
+      "nome" : "JPMORGAN CHASE BANK, NATIONAL ASSOCIATION",
+      "site" : ""
+    },
+    {
+      "codbacen" : "492",
+      "nome" : "ING BANK N.V.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "494",
+      "nome" : "BANCO DE LA REPUBLICA ORIENTAL DEL URUGUAY",
+      "site" : ""
+    },
+    {
+      "codbacen" : "495",
+      "nome" : "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+      "site" : ""
+    },
+    {
+      "codbacen" : "505",
+      "nome" : "BANCO CREDIT SUISSE (BRASIL) S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "600",
+      "nome" : "BANCO LUSO BRASILEIRO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "604",
+      "nome" : "BANCO INDUSTRIAL DO BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "610",
+      "nome" : "BANCO VR S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "611",
+      "nome" : "BANCO PAULISTA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "612",
+      "nome" : "BANCO GUANABARA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "613",
+      "nome" : "BANCO PECUNIA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "623",
+      "nome" : "BANCO PANAMERICANO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "626",
+      "nome" : "BANCO FICSA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "630",
+      "nome" : "BANCO INTERCAP S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "633",
+      "nome" : "BANCO RENDIMENTO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "634",
+      "nome" : "BANCO TRIANGULO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "637",
+      "nome" : "BANCO SOFISA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "638",
+      "nome" : "BANCO PROSPER S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "643",
+      "nome" : "BANCO PINE S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "653",
+      "nome" : "BANCO INDUSVAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "654",
+      "nome" : "BANCO A.J. RENNER S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "655",
+      "nome" : "BANCO VOTORANTIM S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "707",
+      "nome" : "BANCO DAYCOVAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "719",
+      "nome" : "BANIF - BANCO INTERNACIONAL DO FUNCHAL (BRASIL), S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "721",
+      "nome" : "BANCO CREDIBEL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "734",
+      "nome" : "BANCO GERDAU S.A",
+      "site" : ""
+    },
+    {
+      "codbacen" : "735",
+      "nome" : "BANCO POTTENCIAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "738",
+      "nome" : "BANCO MORADA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "739",
+      "nome" : "BANCO BGN S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "740",
+      "nome" : "BANCO BARCLAYS S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "741",
+      "nome" : "BANCO RIBEIRAO PRETO S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "743",
+      "nome" : "BANCO EMBLEMA S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "745",
+      "nome" : "BANCO CITIBANK S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "746",
+      "nome" : "BANCO MODAL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "747",
+      "nome" : "BANCO RABOBANK INTERNATIONAL BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "748",
+      "nome" : "BANCO COOPERATIVO SICREDI S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "749",
+      "nome" : "BANCO SIMPLES S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "751",
+      "nome" : "DRESDNER BANK BRASIL S.A. BANCO MULTIPLO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "752",
+      "nome" : "BANCO BNP PARIBAS BRASIL S.A.",
+      "site" : ""
+    },
+    {
+      "codbacen" : "753",
+      "nome" : "NBC BANK BRASIL S. A. - BANCO MULTIPLO",
+      "site" : ""
+    },
+    {
+      "codbacen" : "756",
+      "nome" : "BANCO COOPERATIVO DO BRASIL S.A. - BANCOOB",
+      "site" : ""
+    },
+    {
+      "codbacen" : "757",
+      "nome" : "BANCO KEB DO BRASIL S.A.",
+      "site" : ""
+    }
+  ]
+  }
