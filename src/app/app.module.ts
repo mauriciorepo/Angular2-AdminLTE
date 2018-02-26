@@ -1,8 +1,9 @@
-import { FormsModule } from '@angular/forms';
+import { CadastroBancoComponent } from './geral/bancos/cadastro-banco/cadastro-banco.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BancoeditComponent } from './geral/bancos/bancoedit/bancoedit.component';
 import { BancolistComponent } from './geral/bancos/bancolist/bancolist.component';
 import { BancoService } from './geral/bancos/banco.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -27,6 +28,11 @@ import { ContasComponent } from './contas/contas.component';
 import { ParcelasComponent } from './contas/parcelas/parcelas.component';
 import { FornecedorboxlistComponent } from './geral/fornecedor/fornecedorboxlist/fornecedorboxlist.component';
 import { FornecedorboxlistService } from './geral/fornecedor/fornecedorboxlist/fornecedorboxlist.service';
+import { MarcasComponent } from './marcas/marcas.component';
+import { CadastroMarcasComponent } from './marcas/cadastro-marcas/cadastro-marcas.component';
+import { EditarmarcasComponent } from './marcas/editarmarcas/editarmarcas.component';
+import { MarcaboxlistComponent } from './marcas/marcaboxlist/marcaboxlist.component';
+import { MarcaService } from './marcas/marca.service';
 
 @NgModule({
   declarations: [
@@ -41,16 +47,22 @@ import { FornecedorboxlistService } from './geral/fornecedor/fornecedorboxlist/f
     ParcelasComponent,
     FornecedorboxlistComponent,
     BancolistComponent,
-    BancoeditComponent
+    BancoeditComponent,
+    MarcasComponent,
+    CadastroMarcasComponent,
+    EditarmarcasComponent,
+    MarcaboxlistComponent,
+    CadastroBancoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule,
-    HttpModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [FornecedorboxlistService, BancoService],
+  providers: [FornecedorboxlistService, BancoService, MarcaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

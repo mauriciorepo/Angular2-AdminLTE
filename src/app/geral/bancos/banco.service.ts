@@ -1,44 +1,50 @@
+import { ErrorHandler } from './../../app.error-handler';
 
 import { XVICTUM_API } from './../../app.api';
 import { Observable } from 'rxjs/Rx';
 import { Banco } from './banco.model';
-import { Headers, Http, Response } from '@angular/http';
+import {  HttpClient , HttpParams ,  HttpHeaders} from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable()
 export class BancoService {
-
-  constructor(private http: Http) { }
+ httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+  constructor(private http: HttpClient) { }
 
   listBanco(): Observable<Banco[]> {
 
-    return this.http.get(`${XVICTUM_API}/bancos`).map(response => response.json());
-   // return this.http.get(`${XVICTUM_API}/bancos`).map(response => response.json());
-    //return this.http.get(`${XVICTUM_API}/bancos`).map(Response => Response.json())
+    return this.http.get<Banco[]>(`${XVICTUM_API}/bancos`);
+
   }
 
-  save(banco: Banco): Observable<Response> {
-    return this.http.put(`${XVICTUM_API}/bancos` , JSON.stringify(banco));
+
+
+
+  get(num?: string): Observable<Banco> {
+    let params: HttpParams;
+    num = num.trim();
+    if (num) {
+      params = new HttpParams().set('codbacen', num);
+    }
+    return this.http.get<Banco>(`${XVICTUM_API}/bancos` , {params: params } );
   }
 
-  get(id: number): Observable<Banco> {
-    return this.http.get(`${XVICTUM_API}/bancos/${id}` , {headers: this.getHeaders()}).map(mapBanco);
+  updateBanco (banco: Banco): Observable<Banco> {
+    return this.http.put<Banco>(`${XVICTUM_API}/bancos`, banco, this.httpOptions);
   }
-  private getHeaders() {
-   let  headers = new Headers();
-    headers.append('Accept' , 'application/json');
-    headers.append('Content-Type' , 'application/json');
-    return headers;
+  cadastroBanco(banco: Banco): Observable<Banco>{
+    console.log("Sevice:" +banco);
+    var body = {codbacen:banco.codbacen,  nome: banco.nome, site: banco.site}
+    console.log("Body: " +body )
+    return this.http.post<Banco>(`${XVICTUM_API}/bancos` , body, this.httpOptions )
+
   }
-
-}
-
-function mapBanco(response: Response): Banco {
-  return toBanco(response.json);
-}
-
-function toBanco(r: any): Banco {
-  return r;
 }

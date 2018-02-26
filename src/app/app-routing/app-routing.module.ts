@@ -1,3 +1,4 @@
+import { CadastroBancoComponent } from './../geral/bancos/cadastro-banco/cadastro-banco.component';
 import { BancoeditComponent } from '../geral/bancos/bancoedit/bancoedit.component';
 import { BancolistComponent } from '../geral/bancos/bancolist/bancolist.component';
 
@@ -19,10 +20,12 @@ import { FornecedorboxlistComponent } from './../geral/fornecedor/fornecedorboxl
       { path: '', redirectTo: 'starter', pathMatch: 'full' },
       { path: 'starter', component: StarterComponent,
      children: [{path: 'conta', component: ContasComponent},
-    {path: 'listcontas' , component: FornecedorboxlistComponent},
+   // {path: 'listcontas' , component: FornecedorboxlistComponent},
     {path: 'listbancos' , component: BancolistComponent},
+    {path: 'cadastromarcas' , component: BancolistComponent},
     {path: 'fornecedor:idfornecedores' , component: BancolistComponent},
-    {path: 'bancos/edit/:id' , component: BancoeditComponent}]
+    {path: 'bancoedit/:codbacen', component: BancoeditComponent},
+    {path: 'cadastrobanco', component: CadastroBancoComponent}]
     },
     ])
   ],

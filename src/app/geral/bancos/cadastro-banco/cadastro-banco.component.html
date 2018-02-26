@@ -3,17 +3,12 @@
   <div class="box-header">
     <i class="fa fa-bank"></i>
 
-    <h3 class="box-title">Banco|Editar</h3>
-    <!-- tools box
-    <div class="pull-right box-tools">
-      <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fa fa-times"></i></button>
-    </div>
-     tools -->
+    <h3 class="box-title">Banco|Novo</h3>
+
   </div>
   <div class="box-body">
 
-    <form  [formGroup] = "bancoForm"  novalidate  (ngSubmit)="editBanco()"   >
+    <form  [formGroup] = "bancoAddForm"  novalidate (ngSubmit)="addBanco()"   >
       <div class="form-group">
         <input type="text" class="form-control"  formControlName="codbacen" placeholder="Banco:">
       </div>
@@ -24,12 +19,14 @@
         <input type="text" class="form-control" placeholder="nome" formControlName="nome"   >
       </div>
 
-
+      <p>Form value: {{ bancoAddForm.value | json }}</p>
+      <p>Form status: {{ bancoAddForm.status | json }}</p>
       <div class="box-footer clearfix">
-        <button type="submit" class="pull-right btn btn-default" id="sendEmail">Update
+        <button type="submit" [disabled]="!bancoAddForm.valid" class="pull-right btn btn-default" id="sendEmail">Lançar
             <i class="fa fa-arrow-circle-right"></i></button>
       </div>
     </form>
+
   </div>
 
 

@@ -4,8 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bancolist',
-  templateUrl: './bancolist.component.html',
-  styleUrls: ['./bancolist.component.css']
+  templateUrl: './bancolist.component.html'
 })
 export class BancolistComponent implements OnInit {
  @Input() list: Banco[];

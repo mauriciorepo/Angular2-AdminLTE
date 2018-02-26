@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BancoeditComponent } from './bancoedit.component';
+import { MarcaboxlistComponent } from './marcaboxlist.component';
 
-describe('BancoeditComponent', () => {
-  let component: BancoeditComponent;
-  let fixture: ComponentFixture<BancoeditComponent>;
+describe('MarcaboxlistComponent', () => {
+  let component: MarcaboxlistComponent;
+  let fixture: ComponentFixture<MarcaboxlistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BancoeditComponent ]
+      declarations: [ MarcaboxlistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoeditComponent);
+    fixture = TestBed.createComponent(MarcaboxlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
