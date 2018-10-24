@@ -1,0 +1,121 @@
+<section class="invoice">
+  <!-- title row -->
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="page-header">
+        <i class="fa fa-globe"></i> {{cliente.fantasia}}
+
+         <small *ngIf="active" class="pull-right label label-success"><i  class="fa fa-car " ></i>  Ativo</small>
+        <small *ngIf="!active" class="pull-right label label-danger"><i  class="fa fa-car " ></i>  Inativo</small>
+        <small class="pull-right">Date: {{cliente.datainc | date: 'dd/MM/yyyy'}}     </small>
+      </h2>
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- info row -->
+  <div class="row invoice-info">
+    <div class="col-sm-6 invoice-col">
+      From
+      <address>
+        <strong>Admin, Inc.</strong><br>
+        <b>Rua, Av:</b> {{cliente.logradouro}}<br>
+        <b>Numero:</b> {{cliente.numero}}, Compl: {{cliente.complemento}}<br>
+        <b>Bairro:</b>{{cliente.bairro}}<br>
+        <b>Phone:</b>{{cliente.telefone}}  <br>
+        <b>Email:</b>  info@almasaeedstudio.com
+      </address>
+    </div>
+    <!--col-->
+    <div class="col-sm-6 invoice-col" *ngIf="cliente.tipo === 'j' ">
+      <b>Invoice </b><br>
+      <br>
+      <b>ID:</b> {{cliente.id}}<br>
+      <b>CPF/CNPJ:</b>  {{cliente.cnpj}}<br>
+      <b>RG/Insc. Estadual:</b>  {{cliente.ie}}<br>
+      <b>Inscricao Municipal</b>   {{cliente.im}}
+    </div>
+    <div class="col-sm-6 invoice-col" *ngIf="cliente.tipo === 'f' ">
+      <b>Invoice </b><br>
+      <br>
+      <b>ID:</b> {{cliente.id}}<br>
+      <b>CPF/CNPJ:</b>  {{cliente.cpf}}<br>
+      <b>RG/Insc. Estadual</b>  {{cliente.rg}}<br>
+      <b>Inscricao Municipal</b>{{cliente.im}}
+    </div>
+
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+
+  <div class="row">
+    <!-- accepted payments column
+    <div class="col-xs-6">
+      <p class="lead">Payment Methods:</p>
+      <img src="../../dist/img/credit/visa.png" alt="Visa">
+      <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
+      <img src="../../dist/img/credit/american-express.png" alt="American Express">
+      <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
+
+      <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg
+        dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+      </p>
+    </div>
+     -->
+
+     <div class="col-xs-12">
+      <p class="lead">Cliente desde: {{cliente.datainc |date: 'dd/MM/yyyy' }}</p>
+
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+
+              <tr>
+                  <th>ID</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Status</th>
+                  <th>Placa</th>
+
+                  <th>Cadastro</th>
+
+
+
+
+
+                </tr>
+                <tr *ngFor="let veiculo of cliente.veiculo ">
+                  <td>{{veiculo.id}}</td>
+                  <td>{{veiculo.marca.nome}}</td>
+                   <td><a [routerLink]="['../../editarveiculo' , veiculo.id , cliente.id ]" >{{veiculo.modelo.modelo}}</a>
+
+                  </td>
+                  <td><span *ngIf="active" class="label label-success">Ativo</span>
+                    <span *ngIf="!active" class="label label-danger">Inativo</span>
+                  </td>
+                  <td>{{veiculo.placa}}</td>
+
+                  <td *ngIf="veiculo.ativo"><a [routerLink]="['../../editarveiculo' , veiculo.id , cliente.id  ]"><small class="label label-success "> Editar <i class="fa fa-car "></i>  </small> </a></td>
+                      <td *ngIf="!veiculo.ativo"> <small class=" label label-danger "> <i class="fa fa-car " ></i> Editar </small> </td>
+                </tr>
+
+        </tbody></table>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- this row will not appear when printing -->
+  <div class="row no-print">
+    <div class="col-xs-12">
+      <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+      <button type="button" (click)="ClienteEditNavigate()" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i>  Editar
+      </button>
+      <button type="button" (click)="veiculoNavigate()" class="btn btn-primary pull-right" style="margin-right: 5px;">
+        <i class="fa fa-plus-square"></i>   Veículo
+      </button>
+    </div>
+  </div>
+</section>

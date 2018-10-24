@@ -1,5 +1,5 @@
 <!-- quick email widget -->
-<div class="box box-info" >
+<div class="box box-primary" >
   <div class="box-header">
     <i class="fa fa-bank"></i>
 
@@ -22,7 +22,7 @@
       <p>Form value: {{ bancoAddForm.value | json }}</p>
       <p>Form status: {{ bancoAddForm.status | json }}</p>
       <div class="box-footer clearfix">
-        <button type="submit" [disabled]="!bancoAddForm.valid" class="pull-right btn btn-default" id="sendEmail">Lançar
+        <button type="submit" [disabled]="!bancoAddForm.valid" class="pull-right btn btn-primary" id="sendEmail">Lançar
             <i class="fa fa-arrow-circle-right"></i></button>
       </div>
     </form>

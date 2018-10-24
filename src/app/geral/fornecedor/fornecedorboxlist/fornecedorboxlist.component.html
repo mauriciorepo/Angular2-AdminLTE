@@ -1,10 +1,51 @@
+<div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Fornecedores|Lista</h3>
+
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tbody><tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CEP</th>
+          <th>Local</th>
 
 
 
+
+        </tr>
+        <tr *ngFor="let fornecedor of list ">
+          <td>{{fornecedor.id}}</td>
+          <td><a [routerLink]="['./../fornecedoredit'  , fornecedor.id]">{{fornecedor.fantasia}}</a></td>
+          <td>{{fornecedor.cep}}</td>
+          <td>{{fornecedor.logradouro}}</td>
+
+        </tr>
+
+      </tbody></table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+</div>
+
+<!--
 <div class="row">
   <div *ngFor= "let fornecedor of fornecedor " class="col-sm-6 col-xs-12">
 
-    <a  [routerLink]="['/fornecedor' , fornecedor.idfornecedores]">
+    <a  >
         <ul class="products-list product-list-in-box">
       <li class="item">
 
@@ -22,18 +63,11 @@
         </div>
       </li>
     </ul>
-      <!--div class="place-info-box">
 
-        <span class="place-info-box-icon"><img src=""> </span>
-        <div class="place-info-bos-content">
-          <span class="place-info-box-text">Terphane</span>
-          <span class="place-info-box-star">Terphane</span>
-          <span class="place-info-box-detail">Terphane</span>
-          <span class="place-info-box-detail">Terphane</span>
-        </div>
-      </div-->
 
     </a>
 
   </div>
 </div>
+-->
+

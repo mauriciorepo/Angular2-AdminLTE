@@ -17,11 +17,7 @@ sub: any;
 errormessage: String = ' ';
 response: any;
   constructor(private bancoservice: BancoService , private route: ActivatedRoute , private fb: FormBuilder ) {
-   /*this.bancoForm = new FormGroup({
-      'codbacen': new FormControl('' , Validators.required),
-      'site': new FormControl(''),
-      'nome': new FormControl('')
-    });*/
+
   }
 
     ngOnInit() {

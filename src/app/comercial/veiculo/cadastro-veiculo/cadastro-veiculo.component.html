@@ -1,0 +1,235 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-envelope"></i>
+
+    <h3 class="box-title">Veiculo|Novo</h3>
+
+  </div>
+  <div class="box-body">
+    <form [formGroup] ="veiculoForm" novalidate (ngSubmit)="cadastroVeiculo()" >
+      <div class="row">
+
+        <div class="form-group col-xs-8 " >
+          <!--<div class="form-group">
+            <label class="center-block">Cliente:
+              <select  [disabled]="true" class="form-control" formControlName="clientefantasia">
+                <option *ngFor="let cliente of listCliente" [value]="cliente.id">{{cliente.fantasia}}</option>
+              </select>
+            </label>
+          </div> -->
+          <label>Cliente</label>
+          <div class="form-group" >
+              <input type="text"   class="form-control" formControlName="clientefantasia"   placeholder="">
+
+            </div>
+
+        </div>
+
+          <div class="checkbox col-xs-4">
+              <label >
+                <input type="checkbox" formControlName="ativo">
+                Cadastro Ativo
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+
+           <!--
+            <div class="col-md-6">
+
+
+
+
+               Select Disable
+              <div class="form-group">
+                <label>Disabled</label>
+                <select class="form-control select2 select2-hidden-accessible" disabled="" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                  <option selected="selected">Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" style="width: 100%;"><span class="selection">
+                  <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-dh4t-container">
+                    <span class="select2-selection__rendered" id="select2-dh4t-container" title="Alabama">Alabama</span>
+                    <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                  </span>
+                </span>
+                <span class="dropdown-wrapper" aria-hidden="true"></span>
+              </span>
+              </div>
+
+            </div>
+            -->
+            <div class="form-group col-xs-3 " >
+
+              <div class="form-group">
+                <label class="center-block">Marca:
+                   <select   class="form-control" formControlName="marca_id"  (change)="findModelo()">
+                    <option *ngFor="let marca of listMarca" [value]="marca.id" >{{marca.nome}}</option>
+                  </select>
+
+
+                </label>
+
+
+
+
+              </div>
+
+            </div>
+
+              <div class="form-group col-xs-6">
+                <div class="form-group">
+                  <label class="center-block">Modelo:
+                    <select   class="form-control" formControlName="modelo_id" (change)="findAnoModelo()" >
+                      <option *ngFor="let modelo of listModelo" [value]="modelo.id">{{modelo.modelo}}</option>
+                    </select>
+                  </label>
+                </div>
+                </div>
+
+                <div class="form-group col-xs-3">
+                  <div class="form-group">
+                    <label class="center-block">Ano Modelo:
+                      <select   class="form-control" formControlName="anomodelo_id" >
+                        <option *ngFor="let anomodelo of listAnoModelo" [value]="anomodelo.id">{{anomodelo.anomodelo}}</option>
+                      </select>
+                    </label>
+                  </div>
+                  </div>
+
+
+
+           </div>
+
+
+      <div class="row">
+      <div class="form-group col-xs-4">
+        <label for="chassi">Chassi</label>
+        <input type="text" class="form-control"  formControlName="chassi" placeholder="">
+        <show-errors [control]="veiculoForm.controls['chassi']"></show-errors>
+
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="ie">Placa</label>
+        <input type="text" class="form-control" formControlName="placa" [textMask]="{mask: mask.placamask}" >
+        <show-errors [control]="veiculoForm.controls['placa']"></show-errors>
+
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="renavam">Renavam</label>
+        <input type="text" class="form-control" formControlName="renavam" placeholder="">
+        <show-errors [control]="veiculoForm.controls['renavam']"></show-errors>
+
+      </div>
+    </div>
+    <div class="row">
+
+        <div class="form-group col-xs-4">
+            <label for="nummotor">Numero Motor</label>
+             <input type="text" class="form-control"  formControlName="nummotor" placeholder="">
+             <show-errors [control]="veiculoForm.controls['nummotor']"></show-errors>
+
+            </div>
+         <div class="form-group col-xs-4">
+          <label>Combustivel</label>
+          <select class="form-control select2 select2-hidden-accessible" autocomplete="on"  formControlName="combustivel" style="width: 100%;"  aria-hidden="true">
+            <option>Gasolina</option>
+            <option>Alcool</option>
+            <option>Disel</option>
+            <option>Flex</option>
+            <option>Flex/GNV</option>
+            <option>Gasolina/GNV</option>
+            <option>Alcool/GNV</option>
+            <option>Eletrico</option>
+
+          </select><show-errors [control]="veiculoForm.controls['combustivel']"></show-errors>
+
+          </div>
+          <div class="form-group col-xs-4">
+            <label>KM</label>
+              <input type="text" class="form-control" formControlName="km" placeholder="">
+              <show-errors [control]="veiculoForm.controls['km']"></show-errors>
+
+            </div>
+
+     </div>
+
+
+
+
+       <div class="row">
+
+            <div class="form-group col-xs-4">
+              <label for="numero">Peso Max</label>
+              <input type="text" class="form-control" formControlName="pesomax" placeholder="">
+            </div>
+            <div class="form-group col-xs-4">
+                <label for="complemento">Altura</label>
+                <input type="text" class="form-control" formControlName="altura" placeholder="">
+                <show-errors [control]="veiculoForm.controls['altura']"></show-errors>
+
+              </div>
+              <div class="form-group col-xs-4">
+              <label for="cep">Potencia</label>
+              <input type="text" class="form-control" formControlName="potencia" placeholder="">
+              <show-errors [control]="veiculoForm.controls['potencia']"></show-errors>
+
+            </div>
+
+       </div>
+       <div class="row">
+        <div class="form-group col-xs-4">
+            <label>Comprimento</label>
+            <div class="form-group" >
+                <input type="text" class="form-control" formControlName="comprimento"  placeholder="">
+                <show-errors [control]="veiculoForm.controls['comprimento']"></show-errors>
+              </div>
+            </div>
+            <div class="form-group col-xs-4">
+              <label>Volume</label>
+              <input type="text" class="form-control" formControlName="volume" placeholder="">
+              <show-errors [control]="veiculoForm.controls['volume']"></show-errors>
+
+            </div>
+
+            <div class="form-group col-xs-4">
+                <label for="cor">Cor</label>
+                <input type="text" class="form-control" formControlName="cor" placeholder="">
+                <show-errors [control]="veiculoForm.controls['cor']"></show-errors>
+              </div>
+     </div>
+
+       <div class="row">
+
+          <div class="form-group col-xs-4">
+              <label for="telefone">Portas</label>
+               <input type="text" class="form-control" formControlName="portas" placeholder="">
+               <show-errors [control]="veiculoForm.controls['portas']"></show-errors>
+
+              </div>
+              <div *ngIf="!this.Hidden" >
+                <input type="text" class="form-control"  formControlName="cliente_id" >
+
+
+            </div>
+
+       </div>
+
+       <div class="box-footer clearfix">
+          <button type="submit" [disabled]="!veiculoForm.valid" [class.btn-success]="veiculoForm.valid " class="pull-right btn btn-primary" id="sendEmail">Cadastrar
+              <i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+       <!-- <p>Form value: {{ veiculoForm.value | json }}</p>
+      <p>Form status: {{ veiculoForm.status | json }}</p>-->
+    </form>
+
+  </div>
+
+
+
+</div>

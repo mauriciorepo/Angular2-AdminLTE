@@ -1,3 +1,26 @@
-<p>
-  cadastro-marcas works!
-</p>
+<!-- quick email widget -->
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-envelope"></i>
+
+    <h3 class="box-title">Marca|Novo</h3>
+
+  </div>
+  <div class="box-body">
+    <form  [formGroup]="marcaForm" novalidate (ngSubmit)="addMarca()" >
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="codigo" placeholder="Codigo:">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="nome" placeholder="Nome Marca">
+      </div>
+      <div class="box-footer clearfix">
+        <button type="submit" class="pull-right btn btn-primary" id="sendEmail">Update
+            <i class="fa fa-arrow-circle-right"></i></button>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>

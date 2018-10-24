@@ -38,37 +38,123 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a routerLinkActive="active" [routerLink]="['conta']"><i class="fa fa-cart-plus"></i> Contas à pagar</a></li>
+        <li class="treeview menu-open">
+            <a href="#"><i class="fa fa-bank"></i> <span>Banco</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a routerLinkActive="active" [routerLink]="['listbancos']"><i class="fa fa-bank"></i>Bancos</a></li>
+                <li><a routerLinkActive="active" [routerLink]="['cadastrobanco']"><i class="fa fa-balance-scale"></i> Cadastrar Banco</a></li>
+
+            </ul>
+         </li>
+         <li class="treeview menu-open">
+            <a href="#"><i class="fa fa-bank"></i> <span>Provisões</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a routerLinkActive="active" [routerLink]="['conta']"><i class="fa fa-cart-plus"></i> Contas à pagar</a></li>
           <li><a routerLinkActive="active" [routerLink]="['listcontas']"><i class="fa fa-cart-plus"></i> Listar Contas</a></li>
           <li><a href="#"><i class="fa fa-cart-arrow-down"></i> Contas à receber</a></li>
           <li><a href="#"><i class="fa fa-balance-scale"></i> Conciliação bancária</a></li>
+            </ul>
+         </li>
         </ul>
-
-
       </li>
-      <li class="treeview">
+      <li class="treeview menu-open">
         <a href="#"><i class="fa fa-bank"></i> <span>Geral</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a routerLinkActive="active" [routerLink]="['listbancos']"><i class="fa fa-bank"></i>Bancos</a></li>
-           <li><a href="#"><i class="fa fa-balance-scale"></i> Centro de custo</a></li>
-           <li><a routerLinkActive="active" [routerLink]="['cadastrobanco']"><i class="fa fa-balance-scale"></i> Cadastrar Banco</a></li>
-          </ul>
 
+             <li class="treeview menu-open">
+                <a href="#"><i class="fa fa-bank"></i> <span>Fornecedor</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLinkActive="active" [routerLink]="['listfornecedor']"><i class="fa fa-balance-scale"></i>Fornecedores</a></li>
+                    <li><a routerLinkActive="active" [routerLink]="['cadastrofornecedor']">Novo | Fornecedor</a></li>
+                </ul>
+             </li>
+             <li class="treeview menu-open">
+                <a href="#"><i class="fa fa-bank"></i> <span>Marca</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLinkActive="active" [routerLink]="['listmarcas']"><i class="fa fa-bank"></i>Marcas</a></li>
+                    <li><a routerLinkActive="active" [routerLink]="['cadastromarcas']"><i class="fa fa-car"></i> Marca|Cadastro</a></li>
+                </ul>
+             </li>
+             <li class="treeview menu-open">
+                <a href="#"><i class="fa fa-bank"></i> <span>Modelo</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLinkActive="active" [routerLink]="['listmodelo']"><i class="fa fa-balance-scale"></i> Modelos</a></li>
+                    <li><a routerLinkActive="active" [routerLink]="['listanomodelo']"><i class="fa fa-balance-scale"></i>Ano Modelos</a></li>
+                  </ul>
+             </li>
+
+
+      </ul>
 
       </li>
+      <li class="treeview menu-open">
+          <a href="#"><i class="fa fa-bank"></i> <span>Comercial</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+
+               <li class="treeview menu-open">
+                  <a href="#"><i class="fa fa-bank"></i> <span>Cliente</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                      <li><a routerLinkActive="active" [routerLink]="['listcliente']"><i class="fa fa-balance-scale"></i>Clientes</a></li>
+                      <li><a routerLinkActive="active" [routerLink]="['cadastrocliente']">Novo | Cliente</a></li>
+                  </ul>
+               </li>
+               <li class="treeview menu-open">
+                <a href="#"><i class="fa fa-car"></i> <span>Veiculo</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLinkActive="active" [routerLink]="['listveiculos']"><i class="fa fa-balance-scale"></i>Veiculos</a></li>
+                    <li><a routerLinkActive="active" [routerLink]="['cadastrocliente']">Novo | Cliente</a></li>
+                </ul>
+             </li>
+
+
+        </ul>
+
+        </li>
       <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+        <a href="#"><i class="fa fa-link"></i> <span>Comercial</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
         <ul class="treeview-menu">
-          <li><a href="#">Link in level 2</a></li>
+
           <li><a href="#">Link in level 2</a></li>
         </ul>
       </li>

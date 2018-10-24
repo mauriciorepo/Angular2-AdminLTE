@@ -1,22 +1,22 @@
-import { FornecedorboxlistService } from './fornecedorboxlist.service';
+import { FornecedorService } from './../fornecedor.service';
+import { Fornecedor } from './../cadastrofornecedor/fornecedor.model';
 
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Fornecedor } from '../fornecedor.model';
 
 @Component({
   selector: 'app-fornecedorboxlist',
-  templateUrl: './fornecedorboxlist.component.html',
-  styleUrls: ['./fornecedorboxlist.component.css']
+  templateUrl: './fornecedorboxlist.component.html'
 })
 export class FornecedorboxlistComponent implements OnInit {
 
-  @Input() fornecedor:  Fornecedor[];
-
-  constructor( private fornecedorboxlistService: FornecedorboxlistService) { }
+   fornecedor:  Fornecedor;
+ @Input() list:Fornecedor[];
+  constructor( private fornecedorService: FornecedorService) { }
 
   ngOnInit() {
-     this.fornecedorboxlistService.fornecedor().subscribe(fornecedor => this.fornecedor = fornecedor);
+     this.fornecedorService.getFornecedores().subscribe((forn:Fornecedor[]) => this.list = forn);
   }
 
 }

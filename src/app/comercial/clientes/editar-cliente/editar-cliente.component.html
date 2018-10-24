@@ -1,0 +1,171 @@
+
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-envelope"></i>
+
+    <h3 class="box-title">Cliente|Editar</h3>
+
+  </div>
+  <div class="box-body">
+    <form [formGroup] ="clienteUpdateForm" novalidate (ngSubmit)="editCliente()" >
+      <div class="row">
+        <div class=radio>
+        <div class="form-group col-xs-6 radio" >
+            <label >
+                <input type="radio"  formControlName="tipo"   value="f"  (click)="onSelectionClickFisica()" >
+                <span>Pesoa Fisica</span>
+              </label>
+              <label >
+                  <input type="radio"  formControlName="tipo"   value="j" (click)="onselctionClickJuridico()" >
+                 <span>Pessoa Jurídica</span>
+
+                </label>
+          </div>
+        </div>
+          <div class="checkbox col-xs-6">
+              <label >
+                <input type="checkbox" formControlName="ativo">
+                Cliente Ativo
+              </label>
+            </div>
+          </div>
+          <div class="row ">
+              <div class="form-group col-xs-6" >
+                <label >Favorecido</label>
+                  <input type="text" name="fantasia" class="form-control" formControlName="fantasia"  placeholder="Fantasia">
+                  <show-errors [control]="clienteUpdateForm.controls['fantasia']"></show-errors>
+                </div>
+
+
+          </div>
+       <div class="row" *ngIf="tipoForm !== 'f'">
+          <div class="form-group col-xs-6">
+              <label>Razão Social</label>
+              <div class="form-group" >
+                  <input type="text" class="form-control" formControlName="razaosocial"  placeholder="">
+                  <show-errors [control]="clienteUpdateForm.controls['razaosocial']"></show-errors>
+                </div>
+              </div>
+              <div class="form-group col-xs-6">
+                  <label for="homepage">Home page</label>
+                  <input type="text" class="form-control" formControlName="homepage" placeholder="">
+                  <show-errors [control]="clienteUpdateForm.controls['homepage']"></show-errors>
+                </div>
+       </div>
+      <div class="row" *ngIf="tipoForm !== 'f'">
+      <div class="form-group col-xs-4">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" class="form-control" [textMask]="{mask: mask.cnpjMask}" formControlName="cnpj" placeholder="">
+        <show-errors [control]="clienteUpdateForm.controls['cnpj']"></show-errors>
+
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="ie">Inscrição Estadual</label>
+        <input type="text" class="form-control" formControlName="ie" placeholder="Inscriçao Estadual">
+        <show-errors [control]="clienteUpdateForm.controls['ie']"></show-errors>
+
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="im">Inscrição Municipal</label>
+        <input type="text" class="form-control" formControlName="im" placeholder="Inscrição Municipal">
+        <show-errors [control]="clienteUpdateForm.controls['im']"></show-errors>
+
+      </div>
+    </div>
+    <div class="row" *ngIf="tipoForm !== 'j'">
+
+        <div class="form-group col-xs-4">
+            <label for="cpf">CPF</label>
+             <input type="text" class="form-control" [textMask]="{mask: mask.cpfMask}" formControlName="cpf" placeholder="">
+             <show-errors [control]="clienteUpdateForm.controls['cpf']"></show-errors>
+
+            </div>
+         <div class="form-group col-xs-4">
+           <label for="rg">RG</label>
+           <input type="text" class="form-control" [textMask]="{mask: mask.rgMask}" formControlName="rg" placeholder="">
+           <show-errors [control]="clienteUpdateForm.controls['rg']"></show-errors>
+
+          </div>
+     </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+          <label>Rua, Av ...</label>
+            <input type="text" class="form-control" formControlName="logradouro" placeholder="">
+            <show-errors [control]="clienteUpdateForm.controls['logradouro']"></show-errors>
+
+          </div>
+
+      <div class="form-group col-xs-6">
+            <label>Bairro</label>
+            <input type="text" class="form-control" formControlName="bairro" placeholder="">
+            <show-errors [control]="clienteUpdateForm.controls['bairro']"></show-errors>
+
+          </div>
+
+     </div>
+
+
+
+       <div class="row">
+
+            <div class="form-group col-xs-4">
+              <label for="numero">Numero</label>
+              <input type="text" class="form-control" formControlName="numero" placeholder="">
+            </div>
+            <div class="form-group col-xs-4">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" formControlName="complemento" placeholder="">
+                <show-errors [control]="clienteUpdateForm.controls['complemento']"></show-errors>
+
+              </div>
+              <div class="form-group col-xs-4">
+              <label for="cep">Cep</label>
+              <input type="text" class="form-control" [textMask]="{mask:mask.cepMask}" formControlName="cep" placeholder="">
+              <show-errors [control]="clienteUpdateForm.controls['cep']"></show-errors>
+
+            </div>
+
+       </div>
+
+       <div class="row">
+
+          <div class="form-group col-xs-4">
+              <label for="telefone">Telefone</label>
+               <input type="text" class="form-control" [textMask]="{mask: mask.phoneMask}" formControlName="telefone" placeholder="">
+               <show-errors [control]="clienteUpdateForm.controls['telefone']"></show-errors>
+
+              </div>
+             <div class="form-group col-xs-4">
+             <label for="telefone">Telefone</label>
+              <div class="input-group ">
+                <div class="input-group-addon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <input type="text" class="form-control" [textMask]= "{mask:mask?.phoneMask}"  formControlName="telefone2" >
+                <show-errors [control]="clienteUpdateForm.controls['telefone2']"></show-errors>
+
+              </div>
+              <div *ngIf="!this.Hidden" >
+                <input type="text" class="form-control"  formControlName="datainc" >
+                <input type="text" class="form-control"  formControlName="id" >
+                  <input type="text" class="form-control"  formControlName="version" >
+
+
+
+              </div>
+            </div>
+
+       </div>
+
+       <div class="box-footer clearfix">
+          <button type="submit" [disabled]="!clienteUpdateForm.valid" [class.btn-success]="clienteUpdateForm.valid " class="pull-right btn btn-primary" id="sendEmail">Cadastrar
+              <i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+       <!-- <p>Form value: {{ fornecedorForm.value | json }}</p>
+      <p>Form status: {{ fornecedorForm.status | json }}</p>-->
+    </form>
+  </div>
+
+
+
+</div>

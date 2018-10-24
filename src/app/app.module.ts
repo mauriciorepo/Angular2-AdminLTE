@@ -1,9 +1,21 @@
+import { VeiculoService } from './comercial/veiculo/veiculo.service';
+import { Select2Component } from 'angular-select2-component';
+import { ClienteService } from './comercial/clientes/cliente.service';
+import { AuthInterceptorJson } from './security/auth-interceptor-json';
+import { TextMaskModule } from 'angular2-text-mask';
+import { FornecedorService } from './geral/fornecedor/fornecedor.service';
+import { CadastrofornecedorComponent } from './geral/fornecedor/cadastrofornecedor/cadastrofornecedor.component';
+import { AnomodeloService } from './ano-modelo/anomodelo.service';
+import { AuthInterceptorBackEnd } from './security/auth-interceptor-back-end';
+import { ModeloService } from './modelo/modelo.service';
+import { MoedeloService } from './modelo/moedelo.service';
+
 import { CadastroBancoComponent } from './geral/bancos/cadastro-banco/cadastro-banco.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BancoeditComponent } from './geral/bancos/bancoedit/bancoedit.component';
 import { BancolistComponent } from './geral/bancos/bancolist/bancolist.component';
 import { BancoService } from './geral/bancos/banco.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -27,12 +39,37 @@ import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboa
 import { ContasComponent } from './contas/contas.component';
 import { ParcelasComponent } from './contas/parcelas/parcelas.component';
 import { FornecedorboxlistComponent } from './geral/fornecedor/fornecedorboxlist/fornecedorboxlist.component';
-import { FornecedorboxlistService } from './geral/fornecedor/fornecedorboxlist/fornecedorboxlist.service';
+
 import { MarcasComponent } from './marcas/marcas.component';
 import { CadastroMarcasComponent } from './marcas/cadastro-marcas/cadastro-marcas.component';
 import { EditarmarcasComponent } from './marcas/editarmarcas/editarmarcas.component';
 import { MarcaboxlistComponent } from './marcas/marcaboxlist/marcaboxlist.component';
 import { MarcaService } from './marcas/marca.service';
+import { ShowErrorsComponent } from './show-errors/show-errors.component';
+import { ModeloComponent } from './modelo/modelo.component';
+import { ModeloboxlistComponent } from './modelo/modeloboxlist/modeloboxlist.component';
+import { AuthInterceptor } from './security/auth-interceptor';
+import { AnoModeloComponent } from './ano-modelo/ano-modelo.component';
+import { CadastroAnoModeloComponent } from './ano-modelo/cadastro-ano-modelo/cadastro-ano-modelo.component';
+import { AnoModeloBoxlistComponent } from './ano-modelo/ano-modelo-boxlist/ano-modelo-boxlist.component';
+import { EditarAnoModeloComponent } from './ano-modelo/editar-ano-modelo/editar-ano-modelo.component';
+import { ComercialComponent } from './comercial/comercial.component';
+import { EditarfornecedorComponent } from './geral/fornecedor/editarfornecedor/editarfornecedor.component';
+import { DatePipe } from '@angular/common';
+import { ClientesComponent } from './comercial/clientes/clientes.component';
+import { CadastroClienteComponent } from './comercial/clientes/cadastro-cliente/cadastro-cliente.component';
+import { ClienteboxlistComponent } from './comercial/clientes/clienteboxlist/clienteboxlist.component';
+import { EditarClienteComponent } from './comercial/clientes/editar-cliente/editar-cliente.component';
+import { DetalheClienteComponent } from './comercial/clientes/detalhe-cliente/detalhe-cliente.component';
+import { VeiculoComponent } from './comercial/veiculo/veiculo.component';
+import { CadastroVeiculoComponent } from './comercial/veiculo/cadastro-veiculo/cadastro-veiculo.component';
+import { EditarVeiculoComponent } from './comercial/veiculo/editar-veiculo/editar-veiculo.component';
+import { VeiculoBoxListComponent } from './comercial/veiculo/veiculo-box-list/veiculo-box-list.component';
+import { DetalheVeiculoComponent } from './comercial/veiculo/detalhe-veiculo/detalhe-veiculo.component';
+import { PlanoComponent } from './comercial/plano/plano.component';
+import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planocobertura.component';
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +80,9 @@ import { MarcaService } from './marcas/marca.service';
     StarterContentComponent,
     StarterFooterComponent,
     StarterControlSidebarComponent,
+    Select2Component,
+
+    EditarfornecedorComponent,
     ContasComponent,
     ParcelasComponent,
     FornecedorboxlistComponent,
@@ -52,17 +92,59 @@ import { MarcaService } from './marcas/marca.service';
     CadastroMarcasComponent,
     EditarmarcasComponent,
     MarcaboxlistComponent,
-    CadastroBancoComponent
-  ],
+    CadastroBancoComponent,
+    ShowErrorsComponent,
+    ModeloComponent,
+    ModeloboxlistComponent,
+    AnoModeloComponent,
+    CadastroAnoModeloComponent,
+    AnoModeloBoxlistComponent,
+    EditarAnoModeloComponent,
+    AnoModeloBoxlistComponent,
+    ComercialComponent,
+    CadastrofornecedorComponent,
+    EditarfornecedorComponent,
+    ClientesComponent,
+    CadastroClienteComponent,
+    ClienteboxlistComponent,
+    EditarClienteComponent,
+    FornecedorboxlistComponent,
+    DetalheClienteComponent,
+    VeiculoComponent,
+    CadastroVeiculoComponent,
+    EditarVeiculoComponent,
+    VeiculoBoxListComponent,
+    DetalheVeiculoComponent,
+    PlanoComponent,
+    PlanocoberturaComponent
+
+
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextMaskModule
   ],
-  providers: [FornecedorboxlistService, BancoService, MarcaService],
+  providers: [
+
+     BancoService,
+     MarcaService,
+     ModeloService,
+     AnomodeloService,
+     FornecedorService,
+     ClienteService,
+     VeiculoService,
+     DatePipe,
+
+   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorBackEnd, multi: true},
+   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true}
+
+  // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

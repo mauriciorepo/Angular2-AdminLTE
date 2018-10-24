@@ -24,7 +24,7 @@
 
         </tr>
         <tr *ngFor="let banco of list ">
-          <td><a [routerLink]="['./../bancoedit' , banco.codbacen]">{{banco.nome}}</a></td>
+          <td><a href="#" [routerLink] = "['./../bancoedit' , banco.codbacen]" > {{banco.nome}} </a></td>
           <td>{{banco.codbacen}}</td>
           <td>{{banco.site}}</td>
 

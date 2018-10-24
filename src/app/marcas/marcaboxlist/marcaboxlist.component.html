@@ -1,3 +1,102 @@
-<p>
-  marcaboxlist works!
-</p>
+<!--
+<div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Marcas|Lista</h3>
+
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row" >
+  <div class="col-md-6 " *ngFor= "let marca of list ">
+      <a  [routerLink]="['../marcaedit' , marca.id]">
+      <div class="box box-widget widget-user">
+
+          <div class="widget-user-header bg-navy-active">
+            <h3 class="widget-user-username">{{marca.name}}</h3>
+            <h5 class="widget-user-desc">{{marca.fipe_name}}</h5>
+          </div>
+          <div class="widget-user-image">
+            <img class="img-circle" [src]='marca.img' alt="User Avatar">
+          </div>
+          <div class="box-footer">
+            <div class="row">
+
+
+              <div class="col-sm-6 border-right">
+                <div class="description-block">
+                  <h5 class="description-header">Chave</h5>
+                  <span class="description-text">{{marca.key}}</span>
+                </div>
+
+              </div>
+                            <div class="col-sm-6">
+                <div class="description-block">
+                  <h5 class="description-header">ORDER</h5>
+                  <span class="description-text">{{marca.order}}</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+</a>
+      </div>
+</div>
+
+  </div>
+
+</div>
+-->
+
+<div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Marcas|Lista</h3>
+
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tbody><tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Codigo</th>
+          <th>Version</th>
+
+
+
+
+        </tr>
+        <tr *ngFor="let marca of list ">
+          <td>{{marca.id}}</td>
+          <td><a [routerLink]="['./../marcaedit'  , marca.id]">{{marca.nome}}</a></td>
+          <td>{{marca.codigo}}</td>
+          <td>{{marca.version}}</td>
+
+        </tr>
+
+      </tbody></table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+</div>

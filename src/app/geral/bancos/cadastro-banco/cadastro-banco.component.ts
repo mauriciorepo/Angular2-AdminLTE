@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroBancoComponent implements OnInit {
 bancoAddForm: FormGroup;
-bancoAdd: Banco
+bancoAdd: Banco;
+response: string;
    constructor(private fb: FormBuilder, private bancoService: BancoService) { }
 
   ngOnInit() {
@@ -27,11 +28,10 @@ bancoAdd: Banco
           this.bancoAdd = this.bancoAddForm.value;
           console.log(this.bancoAdd);
           /* Any API call logic via services goes here */
-          this.bancoService.cadastroBanco(this.bancoAdd).subscribe( error => console.log( error));
+          this.bancoService.cadastroBanco(this.bancoAdd).subscribe( resp => console.log( resp));
         }
 
-    const headers = new HttpHeaders().set('Content-type' , 'application/json');
-    var data= {}
+
   }
 
   createForm(){

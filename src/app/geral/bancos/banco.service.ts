@@ -40,11 +40,10 @@ export class BancoService {
   updateBanco (banco: Banco): Observable<Banco> {
     return this.http.put<Banco>(`${XVICTUM_API}/bancos`, banco, this.httpOptions);
   }
-  cadastroBanco(banco: Banco): Observable<Banco>{
-    console.log("Sevice:" +banco);
+  cadastroBanco(banco: Banco): Observable<string>{
+
     var body = {codbacen:banco.codbacen,  nome: banco.nome, site: banco.site}
-    console.log("Body: " +body )
-    return this.http.post<Banco>(`${XVICTUM_API}/bancos` , body, this.httpOptions )
+    return this.http.post<Banco>(`${XVICTUM_API}/bancos` , body ).map(banco => banco.codbacen, console.log(banco));
 
   }
 }

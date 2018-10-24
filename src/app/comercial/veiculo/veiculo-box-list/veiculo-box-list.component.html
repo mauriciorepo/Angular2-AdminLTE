@@ -1,0 +1,53 @@
+<div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Veiculos|Lista</h3>
+
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tbody><tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Status</th>
+          <th>Placa</th>
+
+          <th>Cadastro</th>
+
+
+
+
+
+        </tr>
+        <tr *ngFor="let veiculo of listVeiculo ">
+          <td>{{veiculo.id}}</td>
+          <td>{{veiculo.marca.nome}}</td>
+           <td><a [routerLink]="['./../editarveiculo'  , veiculo.id ]">{{veiculo.modelo.modelo}}</a>
+
+          </td>
+          <td><span *ngIf="veiculo.ativo" class="label label-success">Ativo</span>
+            <span *ngIf="!veiculo.ativo" class="label label-danger">Inativo</span>
+          </td>
+          <td>{{veiculo.placa}}</td>
+
+          <td *ngIf="veiculo.ativo"><a [routerLink]="['./../editarveiculo' , veiculo.id  ]"><small class="label label-success "> Editar <i class="fa fa-car "></i>  </small> </a></td>
+              <td *ngIf="!veiculo.ativo"> <small class=" label label-danger "> <i class="fa fa-car " ></i> Editar </small> </td>
+        </tr>
+
+      </tbody></table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+</div>
