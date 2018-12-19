@@ -16,7 +16,7 @@ export class AuthInterceptorBackEnd {
     return Observable.throw(err);
 }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authReq = request.clone( {setHeaders: {'Content-Type': 'application/json', 'responseType': 'text', 'Accept': 'application/json,text/plain'}});
     // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
     return next.handle(authReq).catch(/*() => {*/

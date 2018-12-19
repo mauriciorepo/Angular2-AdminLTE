@@ -22,7 +22,7 @@ export class AnomodeloService {
 
  cadastroAnoModelo(modeloid: number , ano_modelo: AnoModelo): Observable<any> {
   this.anomodeloserver = null;
-  this.anomodeloserver = {codigo: '' + ano_modelo.id, anomodelo: ano_modelo.name, modelo_id: modeloid };
+  //this.anomodeloserver = {codigo: '' + ano_modelo.id, anomodelo: ano_modelo.name, modelo_id: modeloid };
  //var model={codigo:modelo.id, modelo:modelo.fipe_name, marca:marca }
   //this.modeloserver.anomodelo.push(modelo);
 

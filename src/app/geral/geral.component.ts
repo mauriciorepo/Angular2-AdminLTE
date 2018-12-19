@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-geral',
-  templateUrl: './geral.component.html',
-  styleUrls: ['./geral.component.css']
+  templateUrl: './geral.component.html'
 })
 export class GeralComponent implements OnInit {
 

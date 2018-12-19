@@ -1,5 +1,5 @@
 export interface Fornecedor{
-  fantasia?:string;
+  fantasia?: string;
   id?:number;
   tipo?:string;
   tipoatividade?:string;

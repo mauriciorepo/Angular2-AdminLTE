@@ -1,5 +1,5 @@
 import { VeiculoService } from './comercial/veiculo/veiculo.service';
-import { Select2Component } from 'angular-select2-component';
+//import { Select2Component } from 'angular-select2-component';
 import { ClienteService } from './comercial/clientes/cliente.service';
 import { AuthInterceptorJson } from './security/auth-interceptor-json';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -80,7 +80,7 @@ import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planoc
     StarterContentComponent,
     StarterFooterComponent,
     StarterControlSidebarComponent,
-    Select2Component,
+    //Select2Component,
 
     EditarfornecedorComponent,
     ContasComponent,

@@ -28,29 +28,29 @@ constructor(private fb: FormBuilder, private fornecedorService: FornecedorServic
 
   ngOnInit() {
 
-    this.createForm()
+    this.createForm();
   }
-  createForm(){
+  createForm() {
     this.fornecedorForm = this.fb.group({
 
       fantasia:new FormControl(null, [Validators.required , Validators.maxLength(255), Validators.minLength(3)/*,CustomValidators.uniqueName*/]),
       // id:new FormControl(null),
-      'tipo':new FormControl('j'),
-      ativo:new FormControl(true),
-      razaosocial:['',Validators.maxLength(255)],
-       cnpj: ['',[Validators.maxLength(18),Validators.minLength(18)]],
-       ie:['',[Validators.maxLength(14),Validators.minLength(5)]],
-       im:['',[Validators.maxLength(14),Validators.minLength(5)]],
-       cpf:['',[Validators.maxLength(14),Validators.minLength(14), Validators.pattern(CPF)]],
-       rg:['',[Validators.maxLength(18),Validators.minLength(5)]],
-       numero:[''],
-       complemento:[null,[Validators.maxLength(255)]],
-       cep:['',[Validators.maxLength(9),Validators.minLength(8)]],
-       telefone:['',Validators.required],
-       telefone2:[''],
-       homepage:[null,[Validators.maxLength(255)]],
-       logradouro:[null,[Validators.maxLength(255)]],
-       bairro:[null,[Validators.maxLength(255)]]
+      'tipo': new FormControl('j'),
+      ativo: new FormControl(true),
+      razaosocial: ['', Validators.maxLength(255)],
+       cnpj: ['', [Validators.maxLength(18), Validators.minLength(18)]],
+       ie: ['', [Validators.maxLength(14), Validators.minLength(5)]],
+       im: ['', [Validators.maxLength(14), Validators.minLength(5)]],
+       cpf: ['', [Validators.maxLength(14), Validators.minLength(14), Validators.pattern(CPF)]],
+       rg: ['', [Validators.maxLength(18), Validators.minLength(5)]],
+       numero: [''],
+       complemento: [null, [Validators.maxLength(255)]],
+       cep: ['', [Validators.maxLength(9), Validators.minLength(8)]],
+       telefone: ['', Validators.required],
+       telefone2: [''],
+       homepage: [null, [Validators.maxLength(255)]],
+       logradouro: [null, [Validators.maxLength(255)]],
+       bairro: [null, [Validators.maxLength(255)]]
 
     });
   }

@@ -1,0 +1,183 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular-admin-lte": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+            "styles": [
+              {"input":"src/styles.css"},
+              {"input":"node_modules/bootstrap/dist/css/bootstrap.css"},
+              {"input":"node_modules/bootstrap/dist/css/bootstrap.min.css"},
+              
+              {"input":"node_modules/font-awesome/css/font-awesome.css"},
+              {"input":"node_modules/ionicons/css/ionicons.css"},
+              {"input":"src/_variables.less"},
+              {"input":"node_modules/icheck/skins/flat/blue.css"},
+              {"input":"node_modules/morris.js/morris.css"},
+              {"input":"node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css"},
+              {"input":"node_modules/admin-lte/plugins/daterangepicker/daterangepicker.css"},
+              {"input":"node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css"}
+            ],
+            "scripts": [
+              {"input":"node_modules/jquery/dist/jquery.js"},
+              {"input":"node_modules/jquery/dist/jquery.min.js"},
+              
+              {"input":"node_modules/jqueryui/jquery-ui.js"},
+              {"input":"node_modules/bootstrap/dist/js/bootstrap.js"},
+              {"input":"node_modules/bootstrap/dist/js/bootstrap.min.js"},
+              
+              {"input":"node_modules/raphael/raphael.js"},
+              {"input":"node_modules/morris.js/morris.js"},
+              {"input":"node_modules/jquery-sparkline/jquery.sparkline.js"},
+              {"input":"node_modules/jquery-knob/dist/jquery.knob.min.js"},
+              {"input":"node_modules/moment/moment.js"},
+              {"input":"node_modules/daterangepicker/daterangepicker.js"},
+              {"input":"node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js"},
+              {"input": "node_modules/jquery-slimscroll/jquery.slimscroll.js"},
+              {"input":"node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js"},
+              {"input":"node_modules/icheck/icheck.js"},
+              {"input":"node_modules/admin-lte/dist/js/app.js"},
+              {"input":"src/assets/js/scripts.js"}
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "src": "src/environments/environment.ts",
+                  "replaceWith": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-admin-lte:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-admin-lte:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-admin-lte:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "scripts": [
+              {"input":"node_modules/jqueryui/jquery-ui.js"},
+              {"input":"node_modules/bootstrap/dist/js/bootstrap.js"},
+              {"input":"node_modules/raphael/raphael.js"},
+              {"input":"node_modules/morris.js/morris.js"},
+              {"input":"node_modules/jquery-sparkline/jquery.sparkline.js"},
+              {"input":"node_modules/jquery-knob/dist/jquery.knob.min.js"},
+              {"input":"node_modules/moment/moment.js"},
+              {"input":"node_modules/daterangepicker/daterangepicker.js"},
+              {"input":"node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js"},
+              {"input":"node_modules/jquery-slimscroll/jquery.slimscroll.js"},
+              {"input":"node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js"},
+              {"input":"node_modules/icheck/icheck.js"},
+              {"input":"node_modules/admin-lte/dist/js/app.js"},
+              {"input":"sr}c/assets/js/scripts.js"}
+            ],
+            "styles": [
+              {"input":"src/styles.css"},
+              {"input":"node_modules/bootstrap/dist/css/bootstrap.css"},
+              {"input":"node_modules/font-awesome/css/font-awesome.css"},
+              {"input":"node_modules/ionicons/css/ionicons.css"},
+              {"input":"src/_variables.less"},
+              {"input":"node_modules/icheck/skins/flat/blue.css"},
+              {"input":"node_modules/morris.js/morris.css"},
+              {"input":"node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css"},
+              {"input":"node_modules/admin-lte/plugins/daterangepicker/daterangepicker.css"},
+              {"input":"node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css"}
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    },
+    "angular-admin-lte-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "angular-admin-lte:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-admin-lte",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}

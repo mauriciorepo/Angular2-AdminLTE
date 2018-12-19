@@ -8,7 +8,7 @@ import { VeiculoService } from './../veiculo.service';
 
 @Component({
   selector: 'app-detalhe-veiculo',
-  templateUrl: './detalhe-veiculo.component.html']
+  templateUrl: './detalhe-veiculo.component.html'
 })
 export class DetalheVeiculoComponent implements OnInit {
 

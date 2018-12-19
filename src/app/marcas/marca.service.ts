@@ -1,6 +1,6 @@
 import { XVICTUM_API, XVICTUM_WS, XVICTUM_SERVER, XVICTUM_MARSHAPE } from './../app.api';
 import { Observable } from 'rxjs/Rx';
-import { HttpClient, HttpInterceptor } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Marca } from './marca.model';
 import { HttpHeaders } from '@angular/common/http';

@@ -6,11 +6,11 @@
     "module": "es2015",
     "types": []
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ],
+  
   "include": [
-    "node_modules/angular-select2-component/index.ts"
-  ]
+    "**/*.ts"
+  ],"exclude": [
+    "**/*.spec.ts",
+    "../out-tsc/app"
+    ]
 }
