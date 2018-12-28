@@ -9,16 +9,18 @@ import { Marca } from '../marca.model';
 })
 export class MarcaboxlistComponent implements OnInit {
 private   list: Marca[];
+//let unirest = require('unirest');
 // private  marca: Marca;
 constructor(private marcaService: MarcaService) { }
 
   ngOnInit() {
 
-    this.marcaService.get().subscribe(marc => {
-       this.list = marc ,
-    this.populateMarca(this.list);
-  }
-    );
+      this.marcaService.getMarcaMarshape().subscribe(marc => this.list = marc );
+    //this.marcaService.get().subscribe(marc => {
+      // this.list = marc;
+   // this.populateMarca(this.list);
+ // }
+    //);
 
   }
   populateMarca(marcaList: Marca[]) {

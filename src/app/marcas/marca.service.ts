@@ -1,4 +1,4 @@
-import { XVICTUM_API, XVICTUM_WS, XVICTUM_SERVER, XVICTUM_MARSHAPE } from './../app.api';
+import { XVICTUM_API, XVICTUM_WS, XVICTUM_SERVER, XVICTUM_MARSHAPE, XVICTUM_FIPE } from './../app.api';
 import { Observable } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,21 +11,26 @@ export class MarcaService {
 marca: Marca;
 
   constructor(private http: HttpClient ) { }
-   /*let headersMarshape = new HttpHeaders().set('Content-Type', 'application/json');
+   /*const headersMarshape = new HttpHeaders().set('Content-Type', 'application/json','authorization', 'X-Mashape-Key ' + 'inCNAdEwxBmshvRBC0srBkG7FE9Vp1n7ihojsnMHaWStTlwnrq');
 
-  headersMarshape.set('authorization', 'X-Mashape-Key ' + 'xu0DPDWjAImsh2XFGjhgyjQmMbyCp1mlpfCjsn6ztGk2FhmllU');
-*/
+   headersMarshape.set('authorization', 'X-Mashape-Key ' + 'inCNAdEwxBmshvRBC0srBkG7FE9Vp1n7ihojsnMHaWStTlwnrq'); */
+
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json'/*,
+      'Content-Type':  'application/json',
       'Accept': 'text/plain',
-      'X-Mashape-Key': 'xu0DPDWjAImsh2XFGjhgyjQmMbyCp1mlpfCjsn6ztGk2FhmllU'*/
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+
     })
   };
   httpOptionsMarshape = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Accept': 'text/plain'
+      'Accept': 'text/plain',
+      'Access-Control-Allow-Origin': '*',
+      'X-Mashape-Key': 'ygk9TfQTYkmshWGYDOmnaP8juGAmp18jrwMjsnLnxKnJIY3mJQ'
     })
   };
   cadastroMarca(ObjMarca: Marca): Observable<Marca> {
@@ -49,7 +54,7 @@ getmarca(): Observable<Marca[]> {
 
 }
 getMarcaMarshape() {
-  return this.http.get<Marca[]>(`${XVICTUM_MARSHAPE}/marcas` );
+  return this.http.get<Marca[]>(`${XVICTUM_MARSHAPE}/Marcas` , this.httpOptions);
 }
 getMarcaById(id: number): Observable<Marca> {
 
@@ -58,6 +63,10 @@ getMarcaById(id: number): Observable<Marca> {
 getMarcaByLike(val: string): Observable<Marca[]> {
 
   return this.http.get<Marca[]>(`${XVICTUM_SERVER}/marcas/like/${val}`);
+}
+getMarcaFipe(): Observable<Marca[]> {
+
+  return this.http.get<Marca[]>(`${XVICTUM_FIPE}/carros/marcas.json` , this.httpOptions);
 }
 
 }

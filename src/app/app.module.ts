@@ -141,7 +141,8 @@ import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planoc
      DatePipe,
 
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorBackEnd, multi: true},
-   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true}
+   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true},
+     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true }
 
   // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true }
   ],

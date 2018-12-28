@@ -15,10 +15,10 @@ export class AuthInterceptor implements HttpInterceptor {
     return Observable.throw(err);
 }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authReq = request.clone(
       // tslint:disable-next-line:max-line-length
-      {setHeaders: {'X-Mashape-Key': `${'GGG7g8uFWGmshVt07YEd27Fbf6Tmp1U19Rdjsn8MW8h2RoN7ig'}`, 'Content-Type': 'application/json', 'Accept': 'application/json'}});
+      {setHeaders: {'X-RapidAPI-Key': `${'ygk9TfQTYkmshWGYDOmnaP8juGAmp18jrwMjsnLnxKnJIY3mJQ'}`, 'Content-Type': 'application/json', 'Accept': 'application/json'}});
     // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
     return next.handle(authReq).catch(() => {
       x => this.handleAuthError(x)
