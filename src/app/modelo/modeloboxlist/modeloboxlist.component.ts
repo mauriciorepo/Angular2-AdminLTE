@@ -18,6 +18,7 @@ export class ModeloboxlistComponent implements OnInit {
 id:number;
 sub: Subscription;
 list: Modelo[];
+listModelo: Modelo[];
 modelo: Modelo;
 Refmarca: Marca;
 marcaserver: MarcaServer;
@@ -29,11 +30,11 @@ Listamarca: Marca[];
   constructor(private modeloservice: ModeloService,private marcaService: MarcaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-   //this.getmarca()
+   this.getmarca()
 
-    this.modeloservice.getmodeloServer().subscribe(model => {
-       this.modeloList = model/*,
-    this.populateMarca(this.list)*/});
+   // this.modeloservice.getmodeloServer().subscribe(model => {
+     //  this.modeloList = model/*,     this.populateMarca(this.list)*/
+    //});
 
   }
   getmarca(){
@@ -47,45 +48,51 @@ testeMarca(lista: Marca[]){
 
   for(let marca of lista){
     this.getModelo(marca);
-}
+   }
 }
   getModelo(marca:Marca){
-    this.modeloservice.getModeloMarshape(marca.codigo).subscribe(modelo => /*console.log(modelo)*/this.populateModelo(marca.id ,modelo));
-   // this.populateModelo(marca.id ,this.list)
+    this.modeloservice.getModeloMarshape(marca.codigo).subscribe((listMode:Modelo[]) => {
+      
+      //this.populateModelo(marca.id ,listMode)
+      this.modeloservice.cadastroModeloByMarca(marca.id ,listMode);
+    });
+    
 
 
   }
   populateModelo(id: number, modeloList: Modelo[]){
-   // console.log('ID:' +id  )
+    console.log(modeloList) 
 
   /* this.Refmarca.id=id;
    this.Refmarca.modelo=modeloList;
    this.marcaService.cadastroMarca(this.Refmarca).subscribe(resp => console.log( resp))
-*/
+*/this.marcaserver=null;
+this.marcaserver={ id: id, codigo:null, nome:'' , modelo: [] }
 
    for (let lista=0; lista <  modeloList.length; lista++) {
     //this.Refmarca=null;
     //this.Refmarca={ id: id, codigo:null, nome:''  }
-    this.marcaserver=null;
-    this.marcaserver={ id: id, codigo:null, nome:''  }
+    
      // modeloList[lista].marca=this.Refmarca;
       //modeloList[lista].codigo=modeloList[lista].id
       //modeloList[lista].modelo =modeloList[lista].fipe_name
       this.modeloserver=null;
-      this.modeloserver={  codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name , marca: this.marcaserver,  }
-   // this.modeloserver.marca=this.marcaserver;
+      this.modeloserver={  codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name , /*marca: this.marcaserver,*/  }
+    this.marcaserver.modelo.push(this.modeloserver)
+      // this.modeloserver.marca=this.marcaserver;
      // this.modeloserver.codigo=modeloList[lista].id
       //this.modeloserver.modelo=modeloList[lista].fipe_name
       //console.log("ID:"+ lista.marca);
     //console.log(modeloList[lista]);
-   this.lancarModelo(this.modeloserver)
-
+   
 
 }
-  }
-   lancarModelo(modelo: ModeloServer){
+this.lancarModelo(this.marcaserver)
 
-    this.modeloservice.cadastroModeloByMarca(modelo).subscribe(resp => console.log( resp))
+  }
+   lancarModelo(marca: MarcaServer){
+
+    //this.modeloservice.cadastroModeloByMarca(marca).subscribe(resp => console.log( resp))
    }
 
 

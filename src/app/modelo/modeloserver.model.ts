@@ -5,7 +5,7 @@ export interface ModeloServer {
   modelo?: string;
   id?: number;
   codigo?: number;
-  marca?: MarcaServer;
-  marca_id?: number;
+  //marca?: MarcaServer;
+  //marca_id?: number;
   anoModelo?: AnoModeloServer[];
 }

@@ -68,6 +68,7 @@ import { VeiculoBoxListComponent } from './comercial/veiculo/veiculo-box-list/ve
 import { DetalheVeiculoComponent } from './comercial/veiculo/detalhe-veiculo/detalhe-veiculo.component';
 import { PlanoComponent } from './comercial/plano/plano.component';
 import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planocobertura.component';
+import { CadastroModeloComponent } from './modelo/cadastro-modelo/cadastro-modelo.component';
 
 
 
@@ -116,7 +117,8 @@ import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planoc
     VeiculoBoxListComponent,
     DetalheVeiculoComponent,
     PlanoComponent,
-    PlanocoberturaComponent
+    PlanocoberturaComponent,
+    CadastroModeloComponent,
 
 
       ],

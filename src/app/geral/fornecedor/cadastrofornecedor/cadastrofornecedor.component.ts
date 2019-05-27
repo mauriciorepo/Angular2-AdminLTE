@@ -70,11 +70,13 @@ constructor(private fb: FormBuilder, private fornecedorService: FornecedorServic
 
       this.fornecedor.cep=this.fornecedor.cep.replace(this.mask.unmask,'');
       this.fornecedor.telefone2=this.fornecedor.telefone2.replace(this.mask.unmask,'');
-      this.fornecedor.telefone=this.fornecedor.telefone.replace(this.mask.unmask,'');
-
+      if(this.fornecedor.telefone2 === ''){
+        
+      }else{this.fornecedor.telefone=this.fornecedor.telefone.replace(this.mask.unmask,'');}     
+      
       console.log(this.fornecedor);
     return this.fornecedorService.cadastroFornecedor(this.fornecedor).subscribe(resp=> {
-      console.log(resp);
+      console.log('aded');
       this.resteForm()});
     }
 

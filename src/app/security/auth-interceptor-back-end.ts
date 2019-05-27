@@ -21,12 +21,14 @@ export class AuthInterceptorBackEnd {
     const authReq = request.clone( {setHeaders: {'Content-Type': 'application/json',
     'responseType': 'text', 'Accept': 'application/json,text/plain', 'Access-Control-Allow-Origin': '*'}});
     // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
-    return next.handle(authReq).catch(/*() => {*/
-      x => this.handleAuthError(x)
-      //return next.handle(request);
-      //const newReq = authReq.clone();
-      //return next.handle(newReq);
-    /*}*/); //here use an arrow functio
+    return next.handle(authReq).catch(() => {
+      //x => this.handleAuthError(x)
+     // return next.handle(request);
+     
+      const newReq = authReq.clone();
+     
+      return next.handle(newReq);
+    }); //here use an arrow functio
     //return next.handle(request);
 
   }

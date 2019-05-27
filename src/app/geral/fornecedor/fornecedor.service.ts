@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+
 import { Banco } from './../bancos/banco.model';
 import { Observable } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 import { Fornecedor } from './cadastrofornecedor/fornecedor.model';
 import { XVICTUM_SERVER } from './../../app.api';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { DatePipe } from '@angular/common';
 
 
@@ -15,10 +15,11 @@ export class FornecedorService {
 
   constructor(private http: HttpClient, private dataPipe: DatePipe) { }
   today= Date.now();
-   //data:string;
-   data = this.dataPipe.transform(this.today, 'yyyy-MM-dd');
-  cadastroFornecedor(forn: Fornecedor): Observable<Fornecedor> {
-
+   data:string;
+   
+   cadastroFornecedor(forn: Fornecedor): Observable<Fornecedor> {
+    this.data = this.dataPipe.transform(this.today, 'yyyy-MM-dd');
+    console.log(this.data);
     var body = {
       fantasia: forn.fantasia,
       tipo: forn.tipo,

@@ -18,7 +18,7 @@ marca: Marca;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Accept': 'text/plain',
+      'Accept': 'application/json,text/plain',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
@@ -35,7 +35,8 @@ marca: Marca;
   };
   cadastroMarca(ObjMarca: Marca): Observable<Marca> {
     var body= {nome: ObjMarca.name , codigo:  ObjMarca.id};
-   return this.http.post<Marca>(`${XVICTUM_SERVER}/marcas` , body, this.httpOptions);
+    console.log(body);
+   return this.http.post<Marca>(`${XVICTUM_SERVER}/marcas` , body);
   }
 
   get(): Observable<Marca[]> {
