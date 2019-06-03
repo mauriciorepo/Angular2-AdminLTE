@@ -20,7 +20,7 @@
           <label>Cliente</label>
           <div class="form-group" >
               <input type="text"   class="form-control" formControlName="clientefantasia"   placeholder="">
-
+              
             </div>
 
         </div>
@@ -75,7 +75,7 @@
 
                 </label>
 
-
+                <show-errors [control]="veiculoForm.controls['marca_id']"></show-errors>
 
 
               </div>
@@ -85,7 +85,7 @@
               <div class="form-group col-xs-6">
                 <div class="form-group">
                   <label class="center-block">Modelo:
-                    <select   class="form-control" formControlName="modelo_id" (change)="findAnoModelo()" >
+                    <select   class="form-control" formControlName="modelo_id"  >
                       <option *ngFor="let modelo of listModelo" [value]="modelo.id">{{modelo.modelo}}</option>
                     </select>
                   </label>
@@ -95,10 +95,11 @@
                 <div class="form-group col-xs-3">
                   <div class="form-group">
                     <label class="center-block">Ano Modelo:
-                      <select   class="form-control" formControlName="anomodelo_id" >
-                        <option *ngFor="let anomodelo of listAnoModelo" [value]="anomodelo.id">{{anomodelo.anomodelo}}</option>
+                      <select   class="form-control" formControlName="anomodelo" >
+                        <option *ngFor="let loop of [].constructor(30); let i = index" [value]="ano-i">{{ano-i}}</option>
                       </select>
                     </label>
+                    <show-errors [control]="veiculoForm.controls['anomodelo']"></show-errors>
                   </div>
                   </div>
 
@@ -147,7 +148,8 @@
             <option>Alcool/GNV</option>
             <option>Eletrico</option>
 
-          </select><show-errors [control]="veiculoForm.controls['combustivel']"></show-errors>
+          </select>
+          <show-errors [control]="veiculoForm.controls['combustivel']"></show-errors>
 
           </div>
           <div class="form-group col-xs-4">
@@ -165,8 +167,9 @@
        <div class="row">
 
             <div class="form-group col-xs-4">
-              <label for="numero">Peso Max</label>
+              <label for="numero">Peso Max(Kg)</label>
               <input type="text" class="form-control" formControlName="pesomax" placeholder="">
+              <show-errors [control]="veiculoForm.controls['pesomax']"></show-errors>
             </div>
             <div class="form-group col-xs-4">
                 <label for="complemento">Altura</label>
@@ -184,14 +187,14 @@
        </div>
        <div class="row">
         <div class="form-group col-xs-4">
-            <label>Comprimento</label>
+            <label>Comprimento (M)</label>
             <div class="form-group" >
                 <input type="text" class="form-control" formControlName="comprimento"  placeholder="">
                 <show-errors [control]="veiculoForm.controls['comprimento']"></show-errors>
               </div>
             </div>
             <div class="form-group col-xs-4">
-              <label>Volume</label>
+              <label>Volume(M³)</label>
               <input type="text" class="form-control" formControlName="volume" placeholder="">
               <show-errors [control]="veiculoForm.controls['volume']"></show-errors>
 
@@ -200,8 +203,7 @@
             <div class="form-group col-xs-4">
                 <label for="cor">Cor</label>
                 <input type="text" class="form-control" formControlName="cor" placeholder="">
-                <show-errors [control]="veiculoForm.controls['cor']"></show-errors>
-              </div>
+                              </div>
      </div>
 
        <div class="row">

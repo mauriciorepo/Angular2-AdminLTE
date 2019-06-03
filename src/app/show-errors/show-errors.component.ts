@@ -2,6 +2,7 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControlDirective, AbstractControl } from '@angular/forms';
 
+
 @Component({
  // tslint:disable-next-line:component-selector
  selector: 'show-errors',
@@ -19,6 +20,8 @@ export class ShowErrorsComponent {
    'minlength': (params) => 'O numero minimo de caracteres é ' + params.requiredLength,
    'maxlength': (params) => 'O numero máximo de caracteres permitidos é ' + params.requiredLength,
    'pattern': (params) => 'O padrão requerido é ' + params.requiredPattern,
+   'max': (params) => 'O valor maximo é '+ params.max,
+   'min' : (params) => 'O valor minimo é' + params.min,
    'years': (params) => params.message,
    'countryCity': (params) => params.message,
    //'uniqueName': (params) => params.message,

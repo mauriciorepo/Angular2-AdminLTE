@@ -1,5 +1,5 @@
 import { conformToMask } from 'angular2-text-mask';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Mask } from './../../../mask';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
@@ -17,6 +17,8 @@ import { ClienteService } from './../../clientes/cliente.service';
 import { AnomodeloService } from './../../../ano-modelo/anomodelo.service';
 import { ModeloService } from './../../../modelo/modelo.service';
 import { MarcaService } from './../../../marcas/marca.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-editar-veiculo',
@@ -26,7 +28,8 @@ import { MarcaService } from './../../../marcas/marca.service';
 export class EditarVeiculoComponent implements OnInit {
 veiculoEditForm: FormGroup;
 @Input() Hidden: boolean;
-
+ano:number;
+ today:number;
 veiculo: Veiculo;
 veiculoserver: VeiculoServer;
  listCliente: Cliente[];
@@ -51,11 +54,16 @@ veiculo_id: number;
               private anomodeloService: AnomodeloService,
               private fb: FormBuilder,
               private clienteService: ClienteService,
-              private veiculoService: VeiculoService
+              private veiculoService: VeiculoService,
+              private datePipe: DatePipe,
+              private router: Router
   ) { }
 
   ngOnInit() {
-
+    this.today=Date.now()
+    //data:string;
+    this.ano =parseInt(this.datePipe.transform(this.today, 'yyyy'),10) ; 
+    //console.log(this.ano);
     this.Hidden = true;
     this.createForm();
     this.route.params.subscribe(params => {
@@ -70,7 +78,7 @@ veiculo_id: number;
 
     this.id = params['id'];
     this.veiculoService.findVeiculoById(this.id).subscribe(resp => {
-   // console.log(resp);
+   console.log(resp);
    this.veiculoserver = resp;
       this.fullUpdate(resp);
     });
@@ -94,32 +102,41 @@ veiculo_id: number;
    });*/
   }
 
+/* 
 
+
+
+
+
+
+
+*/
   createForm( ) {
     this.veiculoEditForm = this.fb.group({
 
-      // id:new FormControl(null),
+       // id:new FormControl(null),
       // cliente_id: [''],
       'ativo': new FormControl(true),
       // razaosocial: ['', Validators.maxLength(255)],
        cor: [''],
        chassi: ['' , Validators.maxLength(17)],
-       placa: ['', [Validators.minLength(8) , Validators.maxLength(8)]],
+       placa: ['', [Validators.required, Validators.minLength(8) , Validators.maxLength(8)]],
        renavam: ['' , [Validators.maxLength(11) , Validators.minLength(11)]],
-       nummotor: [''],
+       nummotor: ['',Validators.maxLength(30)],
        combustivel: ['', Validators.required],
        km: ['', [Validators.maxLength(255)]],
-       volume: [''],
-       pesomax: [''],
-       altura: [''],
-       comprimento: [null],
-       potencia: [null],
-       portas: [null],
+       volume: ['',[Validators.max(6),Validators.maxLength(1)]],
+       pesomax: new FormControl('',[Validators.min(500),Validators.max(4000),Validators.maxLength(4)])/*['',[Validators.max(4000),Validators.maxLength(4)]]*/,
+       altura: ['',Validators.maxLength(1)],
+       comprimento: ['',[Validators.max(4),Validators.min(1)]],
+       potencia: ['',Validators.max(5)],
+       portas: ['',[Validators.max(7),Validators.min(2),Validators.maxLength(1)]],
        // categoria: [''],
        // clientefantasia: [{value: '', disabled: true}, Validators.required],
        modelo_id: [{value: '', disable: true}, Validators.required],
-       marca_id: [null],
-       anomodelo_id: [{value: '', disable: true}, Validators.required],
+       marca_id: ['',Validators.required],
+       //anomodelo_id: [{value: '', disable: true}, Validators.required],
+       anomodelo:['',Validators.required],
        id: [null],
        version: [null]
 
@@ -138,15 +155,16 @@ editarVeiculo() {
     // this.anomodelo = {id: this.veiculoEditForm.get('anomodelo_id').value};
     this.getMarcaOnListByID(parseInt(this.veiculoEditForm.get('marca_id').value, 10));
     this.getModeloOnListByID(parseInt(this.veiculoEditForm.get('modelo_id').value, 10));
-    this.getAnoModeloOnListByID(parseInt(this.veiculoEditForm.get('anomodelo_id').value, 10));
+   // this.getAnoModeloOnListByID(parseInt(this.veiculoEditForm.get('anomodelo_id').value, 10));
 
     this.veiculoserver.marca = this.marca;
     this.veiculoserver.modelo = this.modelo;
-    this.veiculoserver.anomodelo = this.anomodelo;
+    //this.veiculoserver.anomodelo = this.anomodelo;
 
     return this.veiculoService.editarVeiculo(this.veiculoserver, this.clienteid).subscribe(resp => {
       console.log(resp);
       this.resetForm();
+      this.veiculoNavigate()
 
     });
 
@@ -203,7 +221,8 @@ editarVeiculo() {
               marca_id: veic.marca.id,
               modelo_id: veic.modelo.id,
 
-              anomodelo_id: veic.anomodelo.id,
+              //anomodelo_id: veic.anomodelo.id,
+              anomodelo:veic.anomodelo,
               version: veic.version
 
 
@@ -223,16 +242,16 @@ editarVeiculo() {
     this.veiculo = this.veiculoEditForm.value;
     this.modeloService.getModeloByMarca(this.veiculoEditForm.get('marca_id').value).subscribe(modelos => {
     this.listModelo = modelos;
-    this.listAnoModelo = null;
+    
     }  );
   }
 
-  findAnoModelo(id: number) {
+  /*findAnoModelo(id: number) {
 
     this.anomodeloService.getAnoModeloByModelo(this.veiculoEditForm.get('modelo_id').value).subscribe(anomodelos => {
     this.listAnoModelo = anomodelos;
     }  );
-  }
+  }*/
 
   resetForm() {
     this.veiculoEditForm.reset();
@@ -259,7 +278,8 @@ editarVeiculo() {
       volume: veic.volume,
       renavam: veic.renavam,
       id: veic.id,
-      version: veic.version
+      version: veic.version,
+      anomodelo:veic.anomodelo
 
 
     };
@@ -294,8 +314,12 @@ pesquisaMarca(val: string) {
    });
 
  }
+ veiculoNavigate() {
+   this.router.navigate(['starter', 'listveiculos', this.veiculo.id]);
 
- getAnoModeloOnListByID(id: number) {
+}
+
+ /*getAnoModeloOnListByID(id: number) {
 
    this.listAnoModelo.forEach((anomodelo: AnoModeloServer) => {
      if (anomodelo.id === id) {
@@ -303,6 +327,6 @@ pesquisaMarca(val: string) {
 
      }
    });
- }
+ }*/
 
 }

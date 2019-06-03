@@ -23,9 +23,10 @@ comprimento?: number;
 categoria?: string;
 potencia?: string;
 portas?: number;
-marca: Marca;
-modelo: ModeloServer;
-anomodelo: AnoModeloServer;
+marca?: Marca;
+modelo?: ModeloServer;
+//anomodelo: AnoModeloServer;
+anomodelo?:number;
 version?: number;
 
 }

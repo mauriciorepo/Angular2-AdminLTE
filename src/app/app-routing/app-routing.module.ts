@@ -27,6 +27,7 @@ import { ContasComponent } from './../contas/contas.component';
 import { FornecedorboxlistComponent } from './../geral/fornecedor/fornecedorboxlist/fornecedorboxlist.component';
 import { CadastroMarcasComponent } from '../marcas/cadastro-marcas/cadastro-marcas.component';
 import { CadastroModeloComponent } from '../modelo/cadastro-modelo/cadastro-modelo.component';
+import { CadastroProdutoComponent } from '../comercial/produtos/cadastro-produto/cadastro-produto.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { CadastroModeloComponent } from '../modelo/cadastro-modelo/cadastro-mode
     {path: 'listveiculos', component: VeiculoBoxListComponent},
     {path: 'editarveiculo/:id' , component: EditarVeiculoComponent},
     {path: 'editarveiculo/:id/:clienteid' , component: EditarVeiculoComponent},
-    {path:'cadastromodelo', component: CadastroModeloComponent}
+    {path:'cadastromodelo', component: CadastroModeloComponent},
+    {path: 'cadastroprodutos', component: CadastroProdutoComponent}
 
   ]
     },

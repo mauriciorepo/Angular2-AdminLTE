@@ -29,7 +29,7 @@
           <td>{{modelo.id}}</td>
           <td><a [routerLink]="['../modeloedit' , modelo.id]">{{modelo.modelo}}</a></td>
           <td>{{modelo.codigo}}</td>
-
+          <td><button type=""class="btn btn-default" (click)="buscaMarca(modelo.id)" ></button></td>
 
         </tr>
 

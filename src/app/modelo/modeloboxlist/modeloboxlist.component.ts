@@ -30,11 +30,12 @@ Listamarca: Marca[];
   constructor(private modeloservice: ModeloService,private marcaService: MarcaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-   this.getmarca()
+   //this.getModeloTeste();
+    //this.getmarca()
 
-   // this.modeloservice.getmodeloServer().subscribe(model => {
-     //  this.modeloList = model/*,     this.populateMarca(this.list)*/
-    //});
+    this.modeloservice.getmodeloServer().subscribe(model => {
+     this.modeloList = model/*,     this.populateMarca(this.list)*/
+   });
 
   }
   getmarca(){
@@ -54,10 +55,26 @@ testeMarca(lista: Marca[]){
     this.modeloservice.getModeloMarshape(marca.codigo).subscribe((listMode:Modelo[]) => {
       
       //this.populateModelo(marca.id ,listMode)
-      this.modeloservice.cadastroModeloByMarca(marca.id ,listMode);
+     this.modeloservice.cadastroModeloByList(marca.id , listMode).subscribe(resp=> console.log("foi"));
     });
     
 
+
+  }
+
+  getModeloTeste(){
+    this.modeloservice.getModeloMarshape(26).subscribe((listMode:Modelo[]) => {
+      
+      //this.populateModelo(marca.id ,listMode)
+      /*for (let lista=0; lista <  listMode.length; lista++) {
+        this.modeloserver=null;
+      this.modeloserver={  codigo:listMode[lista].id, modelo:listMode[lista].fipe_name   }
+      this.listmodelo.push({codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name  })
+      
+  }*/
+     this.modeloservice.cadastroModeloByList(26 ,listMode).subscribe(resp=> console.log("foi"));
+      
+    });
 
   }
   populateModelo(id: number, modeloList: Modelo[]){
@@ -94,6 +111,10 @@ this.lancarModelo(this.marcaserver)
 
     //this.modeloservice.cadastroModeloByMarca(marca).subscribe(resp => console.log( resp))
    }
+   buscaMarca(id: number){
+     
+      this.marcaService.getMarcaByModelo(id).subscribe(resp => console.log(resp));
 
+   }
 
 }

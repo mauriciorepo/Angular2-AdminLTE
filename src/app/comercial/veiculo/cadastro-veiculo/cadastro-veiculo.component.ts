@@ -19,7 +19,8 @@ import { Veiculo } from './../veiculo.model';
 import { AnomodeloService } from './../../../ano-modelo/anomodelo.service';
 
 import { ModeloService } from './../../../modelo/modelo.service';
-import { validateConfig } from '@angular/router/src/config';
+
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-cadastro-veiculo',
@@ -29,6 +30,9 @@ export class CadastroVeiculoComponent implements OnInit {
 veiculoForm: FormGroup;
 @Input() Hidden: boolean;
 
+ 
+ ano:number;
+ today:number;
 veiculo: Veiculo;
 veiculoserver: VeiculoServer;
  listCliente: Cliente[];
@@ -45,6 +49,7 @@ sub: any;
 id: number;
 showDropDown = false;
   constructor(
+              private datePipe: DatePipe,
               private route: ActivatedRoute ,
               private marcaService: MarcaService,
               private modeloService: ModeloService,
@@ -54,8 +59,16 @@ showDropDown = false;
               private veiculoService: VeiculoService
           ) { }
 
-  ngOnInit() {
-    this.Hidden = true;
+ 
+ 
+          ngOnInit() {
+   
+            this.today=Date.now()
+            //data:string;
+            this.ano =parseInt(this.datePipe.transform(this.today, 'yyyy'),10) ; 
+            //console.log(this.ano);
+            
+            this.Hidden = true;
     this.createForm();
    this.sub = this.route.params.subscribe(params => {
      this.id = params['id'];
@@ -69,6 +82,7 @@ showDropDown = false;
    });
 
   }
+  
   createForm( ) {
     this.veiculoForm = this.fb.group({
 
@@ -78,22 +92,23 @@ showDropDown = false;
       //razaosocial: ['', Validators.maxLength(255)],
        cor: [''],
        chassi: ['' , Validators.maxLength(17)],
-       placa: [null, [Validators.required, Validators.minLength(8) , Validators.maxLength(8)]],
+       placa: ['', [Validators.required, Validators.minLength(8) , Validators.maxLength(8)]],
        renavam: ['' , [Validators.maxLength(11) , Validators.minLength(11)]],
-       nummotor: [''],
+       nummotor: ['',Validators.maxLength(30)],
        combustivel: ['', Validators.required],
        km: ['', [Validators.maxLength(255)]],
-       volume: [''],
-       pesomax: [''],
-       altura: [''],
-       comprimento: [null],
-       potencia: [null],
-       portas: [null],
+       volume: ['',[Validators.max(6),Validators.maxLength(1)]],
+       pesomax: new FormControl('',[Validators.min(500),Validators.max(4000),Validators.maxLength(4)])/*['',[Validators.max(4000),Validators.maxLength(4)]]*/,
+       altura: ['',Validators.maxLength(1)],
+       comprimento: ['',[Validators.max(4),Validators.min(1)]],
+       potencia: ['',Validators.max(5)],
+       portas: ['',[Validators.max(7),Validators.min(2),Validators.maxLength(1)]],
        //categoria: [''],
        clientefantasia: [{value: '', disabled: true}, Validators.required],
        modelo_id: [{value: '', disable: true}, Validators.required],
-       marca_id: [null],
-       anomodelo_id: [{value: '', disable: true}, Validators.required]
+       marca_id: ['',Validators.required],
+       anomodelo:['',Validators.required]
+       //anomodelo: [{value: '', disable: true}, Validators.required]
 
     });
   }
@@ -111,8 +126,6 @@ showDropDown = false;
        if (marca.id === id) {
         this.marca = marca;
        }
-
-
      });
 
   }
@@ -127,7 +140,7 @@ showDropDown = false;
 
   }
 
-  getAnoModeloOnListByID(id: number) {
+  /*getAnoModeloOnListByID(id: number) {
 
     this.listAnoModelo.forEach((anomodelo: AnoModeloServer) => {
       if (anomodelo.id === id) {
@@ -135,7 +148,7 @@ showDropDown = false;
 
       }
     });
-  }
+  }*/
   populaMarca() {
     this.marcaService.getmarca().subscribe(marcas => this.listMarca = marcas);
   }
@@ -163,12 +176,12 @@ showDropDown = false;
       // this.anomodelo = {id: this.veiculoForm.get('anomodelo_id').value};
       this.getMarcaOnListByID(parseInt(this.veiculoForm.get('marca_id').value, 10));
       this.getModeloOnListByID(parseInt(this.veiculoForm.get('modelo_id').value, 10));
-      this.getAnoModeloOnListByID(parseInt(this.veiculoForm.get('anomodelo_id').value, 10));
+      //this.getAnoModeloOnListByID(parseInt(this.veiculoForm.get('anomodelo_id').value, 10));
 
       this.veiculoserver.marca = this.marca;
       this.veiculoserver.modelo = this.modelo;
-      this.veiculoserver.anomodelo = this.anomodelo;
-
+      //this.veiculoserver.anomodelo = this.anomodelo;
+       //this.
       this.cliente.veiculo.push(this.veiculoserver);
       console.log(this.cliente);
       return this.veiculoService.cadastroVeiculo(this.cliente).subscribe( resp => {
@@ -197,7 +210,7 @@ showDropDown = false;
 
   montaVeiculoObject(veic: VeiculoServer) {
 
-
+     console.log(veic.placa.replace('-', ''));
       // tslint:disable-next-line:prefer-const
       this.veiculoserver = {
         altura: veic.altura,
@@ -209,11 +222,12 @@ showDropDown = false;
         km: veic.km,
         nummotor: veic.nummotor,
         pesomax: veic.pesomax,
-        placa: veic.placa.replace(this.mask.unmask, ''),
+        placa: veic.placa.replace('-', ''),
         portas: veic.portas,
         potencia: veic.potencia,
         volume: veic.volume,
         renavam: veic.renavam,
+        anomodelo:veic.anomodelo
 
       };
 

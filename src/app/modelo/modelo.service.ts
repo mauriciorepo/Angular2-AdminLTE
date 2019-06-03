@@ -63,42 +63,47 @@ this.marcaserver={ id: 1, codigo:7, nome:'' , modelo: [] }
     return this.http.post<MarcaServer>(`${XVICTUM_SERVER}/modelos/criar`,  this.marcaserver , this.httpOptions)
    
   }
-  cadastroModeloByMarca(id: number, /*marca:MarcaServer ,*/modeloList: Modelo[]): Observable<ModeloServer> {
+  
+  
+  cadastroModeloByList(id: number, /*marca:MarcaServer ,modeloList: Modelo[]*/ modeloList:Modelo[]): Observable<ModeloServer> {
     this.marcaserver=null;
-this.marcaserver={ id: id, codigo:null, nome:'' , modelo: [] }
-
-   for (let lista=0; lista <  modeloList.length; lista++) {
-    //this.Refmarca=null;
-    //this.Refmarca={ id: id, codigo:null, nome:''  }
     
-     // modeloList[lista].marca=this.Refmarca;
-      //modeloList[lista].codigo=modeloList[lista].id
-      //modeloList[lista].modelo =modeloList[lista].fipe_name
+    //this.marcaserver={ id: id, codigo:null, nome:'' , modelo: [] }
+      //this.listmodelo=modeloList;    
+          
+
+       this.listmodelo=[];
+      for (let lista=0; lista <  modeloList.length; lista++) {
       this.modeloserver=null;
-      this.modeloserver={  codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name /*, marca: this.marcaserver*/  }
-      this.marcaserver.modelo.push(this.modeloserver)
-      // this.modeloserver.marca=this.marcaserver;
-     // this.modeloserver.codigo=modeloList[lista].id
-      //this.modeloserver.modelo=modeloList[lista].fipe_name
-      //console.log("ID:"+ lista.marca);
-    //console.log(modeloList[lista]);
-    return this.http.post<ModeloServer>(`${XVICTUM_SERVER}/modelos/criar`,  this.marcaserver, this.httpOptions)
+      this.modeloserver={  codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name }
+      this.listmodelo.push({codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name  })
+    
+      }
+    return this.http.post<ModeloServer>(`${XVICTUM_SERVER}/modelos/criar/${id}`,this.listmodelo , this.httpOptions)
 
-}
     
     
-    //this.marcaserver = null;
-    //this.marcaserver = { id: modelo.marca.id, codigo: null, nome: '', modelo: [] };
-   //var model={codigo:modelo.id, modelo:modelo.fipe_name, marca:marca }
-    //this.marcaserver.modelo.push(modelo);
+  }
+  
+  
+  cadastroModeloByMarca(id: number, /*marca:MarcaServer ,modeloList: Modelo[]*/ modelo:ModeloServer): Observable<ModeloServer> {
+    this.marcaserver=null;
+    
+//this.marcaserver={ id: id, codigo:null, nome:'' , modelo: [] }
+      //this.listmodelo=modeloList;    
+          
 
-    //console.log(this.marcaserver)
-    //var body={codigo:modelo.codigo,modelo:modelo.nome, marca:modelo.marca }
+    /*   this.listmodelo=[];
+      for (let lista=0; lista <  modeloList.length; lista++) {
+      this.modeloserver=null;
+      this.modeloserver={  codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name 
+      this.listmodelo.push({codigo:modeloList[lista].id, modelo:modeloList[lista].fipe_name  })
+    
+}*/
+return this.http.post<ModeloServer>(`${XVICTUM_SERVER}/modelos/criar/${id}`, modelo , this.httpOptions)
 
-
-   // return this.http.post<ModeloServer>(`${XVICTUM_SERVER}/modelos/criar`,  this.marcaserver, this.httpOptions)
-   // return this.http.post<ModeloServer>(`${XVICTUM_SERVER}/modelos`,  modelo , this.httpOptions);
-
+    
+    
   }
   persistirModeloTeste(idmarca: number,mod: Modelo){
 

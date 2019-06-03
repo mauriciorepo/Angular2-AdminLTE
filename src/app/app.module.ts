@@ -69,6 +69,8 @@ import { DetalheVeiculoComponent } from './comercial/veiculo/detalhe-veiculo/det
 import { PlanoComponent } from './comercial/plano/plano.component';
 import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planocobertura.component';
 import { CadastroModeloComponent } from './modelo/cadastro-modelo/cadastro-modelo.component';
+import { ProdutosComponent } from './comercial/produtos/produtos.component';
+import { CadastroProdutoComponent } from './comercial/produtos/cadastro-produto/cadastro-produto.component';
 
 
 
@@ -119,6 +121,8 @@ import { CadastroModeloComponent } from './modelo/cadastro-modelo/cadastro-model
     PlanoComponent,
     PlanocoberturaComponent,
     CadastroModeloComponent,
+    ProdutosComponent,
+    CadastroProdutoComponent,
 
 
       ],

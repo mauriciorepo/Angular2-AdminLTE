@@ -69,5 +69,9 @@ getMarcaFipe(): Observable<Marca[]> {
 
   return this.http.get<Marca[]>(`${XVICTUM_FIPE}/carros/marcas.json` , this.httpOptions);
 }
+getMarcaByModelo(id:number): Observable<Marca>{
+  return this.http.get<Marca>(`${XVICTUM_SERVER}/marcas/marcasingle/${id}`);
+
+}
 
 }

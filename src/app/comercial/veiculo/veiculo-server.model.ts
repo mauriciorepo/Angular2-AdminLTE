@@ -25,7 +25,8 @@ potencia?: string;
 portas?: number;
 marca?: Marca;
 modelo?: ModeloServer;
-anomodelo?: AnoModeloServer;
+//anomodelo?: AnoModeloServer;
+anomodelo?:number;
 version?: number;
 
 

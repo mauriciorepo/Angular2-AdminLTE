@@ -1,3 +1,4 @@
+
 <div class="box box-info">
   <div class="box-header">
     <i class="fa fa-envelope"></i>
@@ -21,12 +22,12 @@
                 </label>
           </div>
         </div>
-          <div class="checkbox col-xs-6">
+        <div class="checkbox col-xs-6">
               <label >
                 <input type="checkbox" formControlName="ativo">
                 Fornecedor Inativo
               </label>
-            </div>
+          </div>
           </div>
           <div class="row ">
               <div class="form-group col-xs-6" >
@@ -50,7 +51,7 @@
                   <input type="text" class="form-control" formControlName="homepage" placeholder="">
                   <show-errors [control]="fornecedorForm.controls['homepage']"></show-errors>
                 </div>
-       </div>
+      </div>
       <div class="row" *ngIf="tipoForm !== 'f'">
       <div class="form-group col-xs-4">
         <label for="cnpj">CNPJ</label>

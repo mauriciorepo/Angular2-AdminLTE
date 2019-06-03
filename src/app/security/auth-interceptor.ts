@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authReq = request.clone(
       // tslint:disable-next-line:max-line-length
-      {setHeaders: {/*'X-RapidAPI-Host': `${'leolima77-tabela-fipe.p.rapidapi.com'}` ,*/'X-RapidAPI-Key': `${'ygk9TfQTYkmshWGYDOmnaP8juGAmp18jrwMjsnLnxKnJIY3mJQ'}`, 'Content-Type': 'application/json', 'Accept': 'application/json'}});
+      {setHeaders: {'X-RapidAPI-Host': `${'leolima77-tabela-fipe.p.rapidapi.com'}` ,'X-RapidAPI-Key': `${'ygk9TfQTYkmshWGYDOmnaP8juGAmp18jrwMjsnLnxKnJIY3mJQ'}`, 'Content-Type': 'application/json', 'Accept': 'application/json'}});
     // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
     return next.handle(authReq).catch(() => {
       x => this.handleAuthError(x)
