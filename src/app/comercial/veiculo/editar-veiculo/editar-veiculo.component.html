@@ -81,7 +81,7 @@
               <div class="form-group col-xs-6">
                 <div class="form-group">
                   <label class="center-block">Modelo:
-                    <select   class="form-control" formControlName="modelo_id" (change)="findAnoModelo()" >
+                    <select   class="form-control" formControlName="modelo_id"  >
                       <option *ngFor="let modelo of listModelo" [value]="modelo.id">{{modelo.modelo}}</option>
                     </select>
                   </label>
