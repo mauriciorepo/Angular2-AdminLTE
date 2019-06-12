@@ -36,7 +36,7 @@
                   <label class="center-block">Sub_Grupo:
                     <select   class="form-control" formControlName="origem" >
                        <option *ngFor="let grup of grupolist" [value]="grup.id">N- {{grup.nivel}} -{{grup.descricao}}</option>
-                       <option [value]="1" >Nivel 1- Nenhum</option>
+                       <option [value]="0" >Nivel 0- Nenhum</option>
                       </select>
                   </label>
                   <show-errors [control]="editGrupoForm.controls['origem']"></show-errors>
