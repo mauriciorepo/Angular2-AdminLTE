@@ -77,12 +77,12 @@ constructor(private fb: FormBuilder, private fornecedorService: FornecedorServic
       console.log(this.fornecedor);
     return this.fornecedorService.cadastroFornecedor(this.fornecedor).subscribe(resp=> {
       console.log('aded');
-      this.resteForm()});
+      this.resetForm()});
     }
 
   }
 
-  resteForm(){
+  resetForm(){
    this.fornecedorForm.reset();
     // this.fornecedorForm.reset(this.fornecedorForm.value);
   }

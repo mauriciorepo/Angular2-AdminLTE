@@ -78,7 +78,7 @@ veiculo_id: number;
 
     this.id = params['id'];
     this.veiculoService.findVeiculoById(this.id).subscribe(resp => {
-   console.log(resp);
+   //console.log(resp);
    this.veiculoserver = resp;
       this.fullUpdate(resp);
     });

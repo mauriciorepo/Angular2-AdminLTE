@@ -106,7 +106,7 @@ fullUpdate(forn: Fornecedor ) {
   }
     );
  }
-resteForm() {
+resetForm() {
   this.fornecedorUpdateForm.reset();
    // this.fornecedorForm.reset(this.fornecedorForm.value);
  }
@@ -138,7 +138,7 @@ editFornecedor() {
    console.log(this.fornecedor);
     /* Any API call logic via services goes here */
   return this.fornecedorService.editarFornecedor(this.fornecedor.id, this.fornecedor).subscribe(() => {
-    this.resteForm();
+    this.resetForm();
     this.gotoList();
   });
   }

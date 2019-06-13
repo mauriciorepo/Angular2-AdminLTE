@@ -71,6 +71,11 @@ import { PlanocoberturaComponent } from './comercial/plano/planocobertura/planoc
 import { CadastroModeloComponent } from './modelo/cadastro-modelo/cadastro-modelo.component';
 import { ProdutosComponent } from './comercial/produtos/produtos.component';
 import { CadastroProdutoComponent } from './comercial/produtos/cadastro-produto/cadastro-produto.component';
+import { GruposComponent } from './comercial/grupos/grupos.component';
+
+import { CadastrogrupoComponent } from './comercial/grupos/cadastrogrupo/cadastrogrupo.component';
+import { GrupoboxlistComponent } from './comercial/grupos/grupoboxlist/grupoboxlist.component';
+import { EditargrupoComponent } from './comercial/grupos/editargrupo/editargrupo.component';
 
 
 
@@ -83,8 +88,7 @@ import { CadastroProdutoComponent } from './comercial/produtos/cadastro-produto/
     StarterContentComponent,
     StarterFooterComponent,
     StarterControlSidebarComponent,
-    //Select2Component,
-
+   
     EditarfornecedorComponent,
     ContasComponent,
     ParcelasComponent,
@@ -123,6 +127,10 @@ import { CadastroProdutoComponent } from './comercial/produtos/cadastro-produto/
     CadastroModeloComponent,
     ProdutosComponent,
     CadastroProdutoComponent,
+    GruposComponent,
+    CadastrogrupoComponent,
+    GrupoboxlistComponent,
+    EditargrupoComponent,
 
 
       ],
@@ -148,7 +156,7 @@ import { CadastroProdutoComponent } from './comercial/produtos/cadastro-produto/
 
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorBackEnd, multi: true},
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true},
-     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true }
+   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true }
 
   // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true }
   ],

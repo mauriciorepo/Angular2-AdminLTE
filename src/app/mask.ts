@@ -9,6 +9,7 @@ export class Mask {
     public decimalNumberUnMask: string | RegExp;
     public unmask: string | RegExp;
     public placaunmask: string | RegExp;
+    public dataMask: Array<string | RegExp>;
   constructor() {
     this.cepMask = [/\d/ , /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/];
     this.cnpjMask = [ /\d/ , /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/ , /\d/, /\d/, '/', /\d/, /\d/,/\d/, /\d/, '-', /\d/, /\d/];
@@ -17,6 +18,7 @@ export class Mask {
     this.phoneMask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/ , /\d/ , /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
     this.celMask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/ , /\d/ , /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
     this.placamask = [/[a-zA-Z]/ , /[a-zA-Z]/, /[a-zA-Z]/, '-', /\d/, /\d/, /\d/, /\d/];
+    this.dataMask = [/\d/ , /\d/, '/',/\d/, /\d/,'/', /\d/, /\d/, /\d/, /\d/];
     this.unmask = /\D/g;
     this.placaunmask = /\W/g;
     this.decimalNumberUnMask = /[^\d.-]/g;

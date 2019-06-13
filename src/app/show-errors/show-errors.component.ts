@@ -7,8 +7,7 @@ import { AbstractControlDirective, AbstractControl } from '@angular/forms';
  // tslint:disable-next-line:component-selector
  selector: 'show-errors',
  // tslint:disable-next-line:max-line-length
- template: `<span class="help-block" ><ul *ngIf="shouldShowErrors()"><li style="color: red" *ngFor="let error of listOfErrors()">{{error}}</li></ul></span>
-  `,
+ template: `<span class="help-block" ><ul *ngIf="shouldShowErrors()"><li style="color: red" *ngFor="let error of listOfErrors()">{{error}}</li></ul></span> `,
 })
 export class ShowErrorsComponent {
 /*<ul *ngIf="shouldShowErrors()">
@@ -35,7 +34,7 @@ export class ShowErrorsComponent {
  shouldShowErrors(): boolean {
    return this.control &&
      this.control.errors && this.control.invalid &&
-     (this.control.dirty || this.control.touched);
+     this.control.touched/*(this.control.dirty || this.control.touched)*/;
  }
 
  listOfErrors(): string[] {

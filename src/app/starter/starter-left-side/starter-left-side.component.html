@@ -153,6 +153,17 @@
                   <li><a routerLinkActive="active" [routerLink]="['cadastrocliente']">Produtos</a></li>
               </ul>
            </li>
+           <li class="treeview menu-open">
+            <a href="#"><i class="fa fa-bank"></i> <span>Grupos</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a routerLinkActive="active" [routerLink]="['grupolist']"><i class="fa fa-balance-scale"></i>Grupos</a></li>
+                <li><a routerLinkActive="active" [routerLink]="['cadastrogrupo']">Novo | Grupo</a></li>
+            </ul>
+         </li>
 
         </ul>
 

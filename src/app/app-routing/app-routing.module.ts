@@ -28,6 +28,9 @@ import { FornecedorboxlistComponent } from './../geral/fornecedor/fornecedorboxl
 import { CadastroMarcasComponent } from '../marcas/cadastro-marcas/cadastro-marcas.component';
 import { CadastroModeloComponent } from '../modelo/cadastro-modelo/cadastro-modelo.component';
 import { CadastroProdutoComponent } from '../comercial/produtos/cadastro-produto/cadastro-produto.component';
+import { CadastrogrupoComponent } from '../comercial/grupos/cadastrogrupo/cadastrogrupo.component';
+import { GrupoboxlistComponent } from '../comercial/grupos/grupoboxlist/grupoboxlist.component';
+import { EditargrupoComponent } from '../comercial/grupos/editargrupo/editargrupo.component';
 
 
 @NgModule({
@@ -57,7 +60,10 @@ import { CadastroProdutoComponent } from '../comercial/produtos/cadastro-produto
     {path: 'editarveiculo/:id' , component: EditarVeiculoComponent},
     {path: 'editarveiculo/:id/:clienteid' , component: EditarVeiculoComponent},
     {path:'cadastromodelo', component: CadastroModeloComponent},
-    {path: 'cadastroprodutos', component: CadastroProdutoComponent}
+    {path: 'cadastroprodutos', component: CadastroProdutoComponent},
+    {path:'cadastrogrupo', component:CadastrogrupoComponent},
+    {path: 'grupolist', component:GrupoboxlistComponent},
+    {path: 'editargrupo/:id', component:EditargrupoComponent}
 
   ]
     },
