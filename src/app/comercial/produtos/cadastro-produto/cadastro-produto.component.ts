@@ -3,10 +3,13 @@ import { FormGroup,  FormBuilder, Validators, FormControl } from '@angular/forms
 import { Produto } from '../produto.model';
 import { Mask } from './../../../mask';
 import { ProdutosComponent } from '../produtos.component';
+
 import { VOLUME, MOEDA, PERCENT } from './../../../pattern.api';
 import { ProdutoService } from '../produto.service';
 import { GrupoService } from '../../grupos/grupo.service';
 import { Grupo } from '../../grupos/grupo.model';
+import { FabricanteService } from '../../fabricante/fabricante.service';
+import { Fabricante } from '../../fabricante/fabricante.model';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -20,16 +23,19 @@ export class CadastroProdutoComponent implements OnInit {
   today= Date.now();
   grupolist: Grupo[];
   subgrupolist: Grupo[];
+  fabricantelist: Fabricante[];
   grupo: Grupo;
    constructor(
      private fb: FormBuilder,
      private produtoService: ProdutoService,
-     private grupoService: GrupoService
+     private grupoService: GrupoService,
+     private fabricanteService: FabricanteService
     ) { }
 
   ngOnInit() {
     this.createFormProduto();
     this.findOrigem();
+    this.findFabricante();
   }
 
 
@@ -40,7 +46,7 @@ createFormProduto(){
     descricao: ['',[Validators.maxLength(255),Validators.minLength(3),Validators.required]],
     
     ean: ['',Validators.maxLength(255)],
-    fabricante: ['',Validators.maxLength(255)],
+    fabricante: ['',Validators.required],
     codbarras:['',Validators.maxLength(255)],
     data_fabricacao: ['', Validators.maxLength(10)], 
     data_inclusao: ['',Validators.maxLength(10)],
@@ -67,6 +73,7 @@ createFormProduto(){
     volume: ['',[Validators.max(5),Validators.pattern(VOLUME)]],
     grupo: [''],
     origem: ['',Validators.required]
+
     
     // lote_compra: ['', Validators.maxLength(10)],
     
@@ -114,6 +121,12 @@ findGrupoByOrigem(){
        this.subgrupolist=list;
       
       });
+  }
+  findFabricante(){
+
+    this.fabricanteService.getFabricante().subscribe(list=>{
+      this.fabricantelist=list;
+    });
   }
 
 }

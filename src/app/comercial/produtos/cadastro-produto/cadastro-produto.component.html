@@ -59,12 +59,17 @@
           <!--<show-errors [control]="grupoForm.controls['origem']"></show-errors>-->
         
       </div>
-      <div class=" col-xs-6">
-        <label for="" class="">Marca, Fabricante</label>
-
-        <input type="text" class="form-control" formControlName="fabricante" placeholder="Name">
-        <show-errors [control]="produtoForm.controls['fabricante']"></show-errors>
-      </div>
+      <div class="col-xs-6">
+        
+        <label class="center-block">Fabricante(Marca):
+          <select   class="form-control" formControlName="fabricante" >
+             <option *ngFor="let fab of fabricantelist" [value]="fab.id">{{fab.descricao}}</option>
+             <option [value]="1" >Outros</option>
+            </select>
+        </label>
+        <!--<show-errors [control]="grupoForm.controls['origem']"></show-errors> -->
+      
+    </div>   
       <div class="col-xs-6">
         
           <label class="center-block">Sub_Grupo:
