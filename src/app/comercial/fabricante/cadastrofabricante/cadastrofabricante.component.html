@@ -1,3 +1,31 @@
-<p>
-  cadastrofabricante works!
-</p>
+  <div class="box box-info">
+    <div class="box-header">
+      <i class="fa fa-envelope"></i>
+
+      <h3 class="box-title">Fabricante|Novo</h3>
+
+    </div>
+    <div class="box-body">
+      <form [formGroup] ="fabricanteForm" novalidate (ngSubmit)="cadastroFabricante()" >
+                 
+            
+                      <div class="form-group col-xs-12" >
+                        <label >Descrição</label>
+                          <input type="text" name="descricao" class="form-control" formControlName="descricao" autofocus  >
+                          <show-errors [control]="fabricanteForm.controls['descricao']"></show-errors>
+                        </div>
+                
+            
+        <div class="box-footer clearfix">
+            <button type="submit" [disabled]="!fabricanteForm.valid" [class.btn-success]="fabricanteForm.valid" class="pull-right btn btn-primary" >Cadastrar
+                <i class="fa fa-arrow-circle-right"></i></button>
+          </div>
+        <!--<p>Form value: {{ editGrupoForm.value | json }}</p>
+        <p>Form status: {{ editGrupoForm.status | json }}</p>-->
+      </form>
+    </div>
+
+
+
+  </div>
+

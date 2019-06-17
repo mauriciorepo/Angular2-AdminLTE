@@ -76,6 +76,10 @@ import { GruposComponent } from './comercial/grupos/grupos.component';
 import { CadastrogrupoComponent } from './comercial/grupos/cadastrogrupo/cadastrogrupo.component';
 import { GrupoboxlistComponent } from './comercial/grupos/grupoboxlist/grupoboxlist.component';
 import { EditargrupoComponent } from './comercial/grupos/editargrupo/editargrupo.component';
+import { FabricanteComponent } from './comercial/fabricante/fabricante.component';
+import { CadastrofabricanteComponent } from './comercial/fabricante/cadastrofabricante/cadastrofabricante.component';
+import { FabricanteboxlistComponent } from './comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
+import { EditarfabricanteComponent } from './comercial/fabricante/editarfabricante/editarfabricante.component';
 
 
 
@@ -131,6 +135,10 @@ import { EditargrupoComponent } from './comercial/grupos/editargrupo/editargrupo
     CadastrogrupoComponent,
     GrupoboxlistComponent,
     EditargrupoComponent,
+    FabricanteComponent,
+    CadastrofabricanteComponent,
+    FabricanteboxlistComponent,
+    EditarfabricanteComponent,
 
 
       ],
