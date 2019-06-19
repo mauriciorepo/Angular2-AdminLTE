@@ -72,7 +72,11 @@ createFormProduto(){
     peso_bruto: ['',Validators.maxLength(5)],
     volume: ['',[Validators.max(5),Validators.pattern(VOLUME)]],
     grupo: [''],
-    origem: ['',Validators.required]
+    
+    origem: ['',Validators.required],
+    unidade_entrada: ['', Validators.required],
+    unidade_saida: ['', Validators],
+    multiplicador: ['', [Validators.required,Validators.max(5000),Validators.maxLength(4)]]
 
     
     // lote_compra: ['', Validators.maxLength(10)],

@@ -14,6 +14,10 @@ import { CadastroServicoComponent } from './servicos/cadastro-servico/cadastro-s
 import { EditarServicoComponent } from './servicos/editar-servico/editar-servico.component';
 
 import { ServicoBoxListComponent } from './servicos/servico-box-list/servico-box-list.component';
+import { UnidadesComponent } from './unidades/unidades.component';
+import { CadastrounidadesComponent } from './cadastrounidades/cadastrounidades.component';
+import { UnidadesboxlistComponent } from './unidades/unidadesboxlist/unidadesboxlist.component';
+import { EditarunidadesComponent } from './unidades/editarunidades/editarunidades.component';
 
 @NgModule({
   imports: [
@@ -32,6 +36,10 @@ import { ServicoBoxListComponent } from './servicos/servico-box-list/servico-box
            ServicosComponent,
             CadastroServicoComponent,
              EditarServicoComponent,
-              ServicoBoxListComponent]
+              ServicoBoxListComponent,
+              UnidadesComponent,
+              CadastrounidadesComponent,
+              UnidadesboxlistComponent,
+              EditarunidadesComponent]
 })
 export class GeralModule { }

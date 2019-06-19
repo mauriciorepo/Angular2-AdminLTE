@@ -108,7 +108,19 @@
                   </ul>
              </li>
 
-
+             <li class="treeview menu-open">
+              <a href="#"><i class="fa fa-bank"></i> <span>Unidades</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a routerLinkActive="active" [routerLink]="['cadastrounidade']"><i class="fa fa-balance-scale"></i>Lançar Unidade</a></li>
+                  <li><a routerLinkActive="active" [routerLink]="['listanomodelo']"><i class="fa fa-balance-scale"></i>Ano Modelos</a></li>
+                  <li><a routerLinkActive="active" [routerLink]="['cadastromodelo']"><i class="fa fa-balance-scale"></i>Lançar Modelos</a></li>
+              </ul>
+           </li>
+             
       </ul>
 
       </li>
