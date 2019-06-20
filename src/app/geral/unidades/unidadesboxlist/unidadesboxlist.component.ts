@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Unidades } from '../unidade.model';
+import { UnidadeService } from '../unidade.service';
 
 @Component({
   selector: 'app-unidadesboxlist',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unidadesboxlist.component.css']
 })
 export class UnidadesboxlistComponent implements OnInit {
+list: Unidades[];
+  constructor(private unidadeService: UnidadeService) {
 
-  constructor() { }
+   }
 
   ngOnInit() {
+      this.unidadeService.getUnidade().subscribe(lista=>{
+        this.list=lista;
+      })
   }
 
 }

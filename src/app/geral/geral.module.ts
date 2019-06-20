@@ -40,6 +40,8 @@ import { EditarunidadesComponent } from './unidades/editarunidades/editarunidade
               UnidadesComponent,
               CadastrounidadesComponent,
               UnidadesboxlistComponent,
-              EditarunidadesComponent]
+              EditarunidadesComponent,
+              
+            ]
 })
 export class GeralModule { }

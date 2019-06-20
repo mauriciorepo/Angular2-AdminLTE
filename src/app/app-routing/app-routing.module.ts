@@ -35,6 +35,7 @@ import { CadastrofabricanteComponent } from '../comercial/fabricante/cadastrofab
 import { FabricanteboxlistComponent } from '../comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
 import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabricante/editarfabricante.component';
 import { CadastrounidadesComponent } from '../geral/unidades/cadastrounidades/cadastrounidades.component';
+import { UnidadesboxlistComponent } from '../geral/unidades/unidadesboxlist/unidadesboxlist.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { CadastrounidadesComponent } from '../geral/unidades/cadastrounidades/ca
     {path:'cadastrofabricante', component: CadastrofabricanteComponent},
     {path:'fabricantelist', component:FabricanteboxlistComponent},
     {path: 'editarfabricante/:id', component:EditarfabricanteComponent},
-    {path: 'cadastrounidade', component:CadastrounidadesComponent}
+    {path: 'cadastrounidade', component:CadastrounidadesComponent},
+    {path: 'unidadelist', component:UnidadesboxlistComponent}
 
   ]
     },
