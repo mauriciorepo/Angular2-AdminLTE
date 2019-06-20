@@ -80,7 +80,8 @@ import { FabricanteComponent } from './comercial/fabricante/fabricante.component
 import { CadastrofabricanteComponent } from './comercial/fabricante/cadastrofabricante/cadastrofabricante.component';
 import { FabricanteboxlistComponent } from './comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
 import { EditarfabricanteComponent } from './comercial/fabricante/editarfabricante/editarfabricante.component';
-import { CadastrounidadesComponent } from './geral/unidades/cadastrounidades/cadastrounidades.component';
+
+
 
 
 
@@ -151,7 +152,8 @@ import { CadastrounidadesComponent } from './geral/unidades/cadastrounidades/cad
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    TextMaskModule
+    TextMaskModule,
+    //GeralModule
   ],
   providers: [
 

@@ -71,9 +71,9 @@ import { UnidadesboxlistComponent } from '../geral/unidades/unidadesboxlist/unid
     {path: 'editargrupo/:id', component:EditargrupoComponent},
     {path:'cadastrofabricante', component: CadastrofabricanteComponent},
     {path:'fabricantelist', component:FabricanteboxlistComponent},
-    {path: 'editarfabricante/:id', component:EditarfabricanteComponent},
-    {path: 'cadastrounidade', component:CadastrounidadesComponent},
-    {path: 'unidadelist', component:UnidadesboxlistComponent}
+    {path: 'editarfabricante/:id', component:EditarfabricanteComponent}
+    
+    
 
   ]
     },
