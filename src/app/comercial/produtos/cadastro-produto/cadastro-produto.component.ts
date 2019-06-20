@@ -72,18 +72,11 @@ createFormProduto(){
     peso_bruto: ['',Validators.maxLength(5)],
     volume: ['',[Validators.max(5),Validators.pattern(VOLUME)]],
     grupo: [''],
-<<<<<<< HEAD
     
     origem: ['',Validators.required],
     unidade_entrada: ['', Validators.required],
-    unidade_saida: ['', Validators],
+    unidade_saida: ['', Validators.required],
     multiplicador: ['', [Validators.required,Validators.max(5000),Validators.maxLength(4)]]
-=======
-    origem: ['',Validators.required]
-    //unidade_entrada: ['', Validators.required],
-    //unidade_saida: ['', Validators],
-   // multiplicador: ['', [Validators.required,Validators.max(5000),Validators.maxLength(4)]]
->>>>>>> devproduto
 
     
     // lote_compra: ['', Validators.maxLength(10)],
