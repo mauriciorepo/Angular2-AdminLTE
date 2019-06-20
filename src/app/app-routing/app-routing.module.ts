@@ -34,8 +34,8 @@ import { EditargrupoComponent } from '../comercial/grupos/editargrupo/editargrup
 import { CadastrofabricanteComponent } from '../comercial/fabricante/cadastrofabricante/cadastrofabricante.component';
 import { FabricanteboxlistComponent } from '../comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
 import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabricante/editarfabricante.component';
-import { CadastrounidadesComponent } from '../geral/unidades/cadastrounidades/cadastrounidades.component';
-import { UnidadesboxlistComponent } from '../geral/unidades/unidadesboxlist/unidadesboxlist.component';
+
+
 
 
 @NgModule({
