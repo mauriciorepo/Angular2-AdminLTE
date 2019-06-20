@@ -34,6 +34,7 @@ import { EditargrupoComponent } from '../comercial/grupos/editargrupo/editargrup
 import { CadastrofabricanteComponent } from '../comercial/fabricante/cadastrofabricante/cadastrofabricante.component';
 import { FabricanteboxlistComponent } from '../comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
 import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabricante/editarfabricante.component';
+import { CadastrounidadesComponent } from '../geral/unidades/cadastrounidades/cadastrounidades.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabrica
     {path: 'editargrupo/:id', component:EditargrupoComponent},
     {path:'cadastrofabricante', component: CadastrofabricanteComponent},
     {path:'fabricantelist', component:FabricanteboxlistComponent},
-    {path: 'editarfabricante/:id', component:EditarfabricanteComponent}
+    {path: 'editarfabricante/:id', component:EditarfabricanteComponent},
+    {path: 'cadastrounidade', component:CadastrounidadesComponent}
 
   ]
     },
