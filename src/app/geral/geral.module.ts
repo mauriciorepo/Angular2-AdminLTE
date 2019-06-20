@@ -15,7 +15,7 @@ import { EditarServicoComponent } from './servicos/editar-servico/editar-servico
 
 import { ServicoBoxListComponent } from './servicos/servico-box-list/servico-box-list.component';
 import { UnidadesComponent } from './unidades/unidades.component';
-import { CadastrounidadesComponent } from './cadastrounidades/cadastrounidades.component';
+import { CadastrounidadesComponent } from './unidades/cadastrounidades/cadastrounidades.component';
 import { UnidadesboxlistComponent } from './unidades/unidadesboxlist/unidadesboxlist.component';
 import { EditarunidadesComponent } from './unidades/editarunidades/editarunidades.component';
 
