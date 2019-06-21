@@ -1,0 +1,42 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-envelope"></i>
+
+    <h3 class="box-title">Unidades | Novo</h3>
+
+  </div>
+  <div class="box-body">
+    <form [formGroup] ="unidadeForm" novalidate (ngSubmit)="editarUnidade()" >
+
+
+                    <div class="form-group col-xs-12" >
+                      <label >Descrição</label>
+                        <input type="text" name="descricao" class="form-control" formControlName="descricao" autofocus  >
+                        <show-errors [control]="unidadeForm.controls['descricao']"></show-errors>
+                      </div>
+
+                      <div class="form-group col-xs-12" >
+                        <label >Sigla</label>
+                          <input type="text" name="sigla" class="form-control" formControlName="sigla">
+                          <show-errors [control]="unidadeForm.controls['sigla']"></show-errors>
+                        </div>
+
+                      <!--<div *ngIf="!this.Hidden" >
+                        <input type="text" class="form-control"  formControlName="id" >
+                        <input type="text" class="form-control"  formControlName="version" >
+      
+      
+                    </div>-->
+
+      <div class="box-footer clearfix">
+          <button type="submit" [disabled]="!unidadeForm.valid" [class.btn-success]="unidadeForm.valid" class="pull-right btn btn-primary" >Cadastrar
+              <i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+      <!--<p>Form value: {{ editGrupoForm.value | json }}</p>
+      <p>Form status: {{ editGrupoForm.status | json }}</p>-->
+    </form>
+  </div>
+
+
+
+</div>
