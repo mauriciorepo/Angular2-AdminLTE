@@ -79,8 +79,8 @@ import { EditarUnidadeComponent } from '../geral/unidade/editar-unidade/editar-u
     
     {path: 'cadastrounidade' , component: CadastroUnidadeComponent},
     {path: 'unidadelist', component: UnidadeListaComponent},
-    {path: 'editarunidade/:id', component: EditarUnidadeComponent},
-    {path:'unidadeedit', component:EditarUnidadeComponent}
+    {path: 'editarunidade/:id', component: EditarUnidadeComponent}
+    
     
     
     

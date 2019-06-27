@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UnidadeService } from '../unidade.service';
 import { Unidade } from '../unidade.model';
@@ -14,6 +14,7 @@ export class EditarUnidadeComponent implements OnInit {
   unidade: Unidade;
   sub: any;
   id: number;
+  @Input() Hidden:boolean;
   constructor(
     private fb: FormBuilder,
     private undService: UnidadeService,
@@ -21,7 +22,9 @@ export class EditarUnidadeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+
     this.createForm();
+    this.Hidden=true;
     this.sub=this.route.params.subscribe(params=> {
       this.id=params['id'];
       this.undService.getById(this.id).subscribe(und=>{
@@ -41,8 +44,24 @@ export class EditarUnidadeComponent implements OnInit {
 
   fullPopulate(und: Unidade){
     this.editarUnidadeForm.patchValue({
+      id:und.id,
+      version:und.version,
+      sigla:und.sigla,
+      descricao:und.descricao
 
     });
 
+  }
+
+  editarUnidade(){
+
+    this.unidade=this.editarUnidadeForm.value;
+    this.undService.editUnits(this.unidade).subscribe(resp=>{
+      this.resetForm();
+    });
+  }
+
+  resetForm(){
+    this.editarUnidadeForm.reset()
   }
 }

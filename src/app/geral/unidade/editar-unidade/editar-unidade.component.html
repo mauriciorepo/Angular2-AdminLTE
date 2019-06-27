@@ -21,12 +21,12 @@
                           <show-errors [control]="editarUnidadeForm.controls['sigla']"></show-errors>
                         </div>
 
-                      <!--<div *ngIf="!this.Hidden" >
+                      <div *ngIf="!this.Hidden" >
                         <input type="text" class="form-control"  formControlName="id" >
                         <input type="text" class="form-control"  formControlName="version" >
       
       
-                    </div>-->
+                    </div>
 
       <div class="box-footer clearfix">
           <button type="submit" [disabled]="!editarUnidadeForm.valid" [class.btn-success]="editarUnidadeForm.valid" class="pull-right btn btn-primary" >Update
