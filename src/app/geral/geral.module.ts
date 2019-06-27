@@ -44,7 +44,7 @@ import { UnidadeListaComponent } from './unidade/unidade-lista/unidade-lista.com
               UnidadeComponent,
               CadastroUnidadeComponent,
               EditarUnidadeComponent,
-              UnidadeListaComponent,
+              UnidadeListaComponent
               
             ],
             exports:[

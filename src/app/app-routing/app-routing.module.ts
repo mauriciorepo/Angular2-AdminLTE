@@ -37,6 +37,7 @@ import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabrica
 
 import { UnidadeListaComponent } from '../geral/unidade/unidade-lista/unidade-lista.component';
 import { CadastroUnidadeComponent } from '../geral/unidade/cadastro-unidade/cadastro-unidade.component';
+import { EditarUnidadeComponent } from '../geral/unidade/editar-unidade/editar-unidade.component';
 
 
 
@@ -75,8 +76,11 @@ import { CadastroUnidadeComponent } from '../geral/unidade/cadastro-unidade/cada
     {path:'cadastrofabricante', component: CadastrofabricanteComponent},
     {path:'fabricantelist', component:FabricanteboxlistComponent},
     {path: 'editarfabricante/:id', component:EditarfabricanteComponent},
-    {path: 'unidadelist' , component: UnidadeListaComponent},
-    {path: 'cadastrounidade' , component: CadastroUnidadeComponent}
+    
+    {path: 'cadastrounidade' , component: CadastroUnidadeComponent},
+    {path: 'unidadelist', component: UnidadeListaComponent},
+    {path: 'editarunidade/:id', component: EditarUnidadeComponent},
+    {path:'unidadeedit', component:EditarUnidadeComponent}
     
     
     

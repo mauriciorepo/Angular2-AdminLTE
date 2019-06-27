@@ -80,6 +80,9 @@ import { FabricanteComponent } from './comercial/fabricante/fabricante.component
 import { CadastrofabricanteComponent } from './comercial/fabricante/cadastrofabricante/cadastrofabricante.component';
 import { FabricanteboxlistComponent } from './comercial/fabricante/fabricanteboxlist/fabricanteboxlist.component';
 import { EditarfabricanteComponent } from './comercial/fabricante/editarfabricante/editarfabricante.component';
+import { CadastroUnidadeComponent } from './geral/unidade/cadastro-unidade/cadastro-unidade.component';
+import { EditarUnidadeComponent } from './geral/unidade/editar-unidade/editar-unidade.component';
+import { UnidadeListaComponent } from './geral/unidade/unidade-lista/unidade-lista.component';
 
 
 
@@ -140,7 +143,10 @@ import { EditarfabricanteComponent } from './comercial/fabricante/editarfabrican
     FabricanteComponent,
     CadastrofabricanteComponent,
     FabricanteboxlistComponent,
-    EditarfabricanteComponent
+    EditarfabricanteComponent,
+    CadastroUnidadeComponent,
+    EditarUnidadeComponent,
+    UnidadeListaComponent
     
 
 
