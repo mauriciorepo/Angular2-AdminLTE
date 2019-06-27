@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnidadesboxlistComponent } from './unidadesboxlist.component';
+import { UnidadeListaComponent } from './unidade-lista.component';
 
-describe('UnidadesboxlistComponent', () => {
-  let component: UnidadesboxlistComponent;
-  let fixture: ComponentFixture<UnidadesboxlistComponent>;
+describe('UnidadeListaComponent', () => {
+  let component: UnidadeListaComponent;
+  let fixture: ComponentFixture<UnidadeListaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnidadesboxlistComponent ]
+      declarations: [ UnidadeListaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UnidadesboxlistComponent);
+    fixture = TestBed.createComponent(UnidadeListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Unidades } from '../unidade.model';
 import { UnidadeService } from '../unidade.service';
+import { Unidade } from '../unidade.model';
 
 @Component({
-  selector: 'app-unidadesboxlist',
-  templateUrl: './unidadesboxlist.component.html',
-  styleUrls: ['./unidadesboxlist.component.css']
+  selector: 'app-unidade-lista',
+  templateUrl: './unidade-lista.component.html',
+  styleUrls: ['./unidade-lista.component.css']
 })
-export class UnidadesboxlistComponent implements OnInit {
-list: Unidades[];
+export class UnidadeListaComponent implements OnInit {
+
+  list: Unidade[];
   constructor(private unidadeService: UnidadeService) {
 
    }

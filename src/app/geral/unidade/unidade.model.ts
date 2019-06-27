@@ -1,4 +1,4 @@
-export interface Unidades{
+export interface Unidade{
 
     descricao?: string;
     id?: number;

@@ -28,7 +28,7 @@
         </tr>
         <tr *ngFor="let unid of list ">
           <td>{{unid.id}}</td>
-          <td><a [routerLink]="['./../marcaedit'  , unid.id]">{{unid.descricao}}</a></td>
+          <td><a [routerLink]="['./../editarunidade'  , unid.id]">{{unid.descricao}}</a></td>
           <td>{{unid.sigla}}</td>
           <td>{{unid.version}}</td>
           <!--<td><button type=""class="btn btn-default" (click)="lancaModelo(marca.id)" ></button></td>-->

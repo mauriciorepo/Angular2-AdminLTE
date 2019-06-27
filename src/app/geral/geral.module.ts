@@ -14,10 +14,14 @@ import { CadastroServicoComponent } from './servicos/cadastro-servico/cadastro-s
 import { EditarServicoComponent } from './servicos/editar-servico/editar-servico.component';
 
 import { ServicoBoxListComponent } from './servicos/servico-box-list/servico-box-list.component';
-import { UnidadesComponent } from './unidades/unidades.component';
+import { UnidadeComponent } from './unidade/unidade.component';
+import { CadastroUnidadeComponent } from './unidade/cadastro-unidade/cadastro-unidade.component';
+import { EditarUnidadeComponent } from './unidade/editar-unidade/editar-unidade.component';
+import { UnidadeListaComponent } from './unidade/unidade-lista/unidade-lista.component';
 
-import { UnidadesboxlistComponent } from './unidades/unidadesboxlist/unidadesboxlist.component';
-import { EditarunidadesComponent } from './unidades/editarunidades/editarunidades.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -37,6 +41,10 @@ import { EditarunidadesComponent } from './unidades/editarunidades/editarunidade
             CadastroServicoComponent,
              EditarServicoComponent,
               ServicoBoxListComponent,
+              UnidadeComponent,
+              CadastroUnidadeComponent,
+              EditarUnidadeComponent,
+              UnidadeListaComponent
               
             ],
             exports:[
