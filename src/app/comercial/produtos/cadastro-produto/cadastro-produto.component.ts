@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { FormGroup,  FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Produto } from '../produto.model';
 import { Mask } from './../../../mask';
@@ -10,6 +10,9 @@ import { GrupoService } from '../../grupos/grupo.service';
 import { Grupo } from '../../grupos/grupo.model';
 import { FabricanteService } from '../../fabricante/fabricante.service';
 import { Fabricante } from '../../fabricante/fabricante.model';
+import { Unidade } from '../../../geral/unidade/unidade.model';
+import { UnidadeService } from './../../../geral/unidade/unidade.service';
+
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -25,17 +28,24 @@ export class CadastroProdutoComponent implements OnInit {
   subgrupolist: Grupo[];
   fabricantelist: Fabricante[];
   grupo: Grupo;
+  listUnidades: Unidade[];
+  un:number;
+  @Input() entrada:string;
+  @Input() saida:string;
    constructor(
      private fb: FormBuilder,
      private produtoService: ProdutoService,
      private grupoService: GrupoService,
-     private fabricanteService: FabricanteService
+     private fabricanteService: FabricanteService,
+     private undService: UnidadeService
     ) { }
 
   ngOnInit() {
     this.createFormProduto();
     this.findOrigem();
     this.findFabricante();
+    this.findUnidades();
+
   }
 
 
@@ -133,4 +143,31 @@ findGrupoByOrigem(){
     });
   }
 
+  findUnidades(){
+    this.undService.getUnidade().subscribe(list=>{
+       this.listUnidades=list;
+
+    });
+  }
+
+  popVenda(){
+    this.un=parseInt(this.produtoForm.get('unidade_saida').value,10);
+    this.listUnidades.forEach((unid: Unidade) => {
+      if (unid.id === this.un) {
+       this.saida =unid.sigla ;
+      }
+    });
+     
+  }
+
+  popCompra(){
+    this.un=parseInt(this.produtoForm.get('unidade_entrada').value,10);
+    this.listUnidades.forEach((unid: Unidade) => {
+      if (unid.id === this.un) {
+        console.log(unid);
+       this.entrada =unid.sigla;
+       
+      }
+    });
+  }
 }

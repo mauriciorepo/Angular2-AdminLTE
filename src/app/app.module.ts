@@ -83,6 +83,7 @@ import { EditarfabricanteComponent } from './comercial/fabricante/editarfabrican
 import { CadastroUnidadeComponent } from './geral/unidade/cadastro-unidade/cadastro-unidade.component';
 import { EditarUnidadeComponent } from './geral/unidade/editar-unidade/editar-unidade.component';
 import { UnidadeListaComponent } from './geral/unidade/unidade-lista/unidade-lista.component';
+import { UnidadeService } from './geral/unidade/unidade.service';
 
 
 
@@ -171,6 +172,7 @@ import { UnidadeListaComponent } from './geral/unidade/unidade-lista/unidade-lis
      ClienteService,
      VeiculoService,
      DatePipe,
+     UnidadeService,
 
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorBackEnd, multi: true},
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true},
