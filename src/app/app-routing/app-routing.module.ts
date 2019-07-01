@@ -38,6 +38,9 @@ import { EditarfabricanteComponent } from '../comercial/fabricante/editarfabrica
 import { UnidadeListaComponent } from '../geral/unidade/unidade-lista/unidade-lista.component';
 import { CadastroUnidadeComponent } from '../geral/unidade/cadastro-unidade/cadastro-unidade.component';
 import { EditarUnidadeComponent } from '../geral/unidade/editar-unidade/editar-unidade.component';
+import { CadastrotiposervicoComponent } from '../comercial/tipo-servicos/cadastrotiposervico/cadastrotiposervico.component';
+import { EditartiposervicoComponent } from '../comercial/tipo-servicos/editartiposervico/editartiposervico.component';
+import { TiposervicoboxlistComponent } from '../comercial/tipo-servicos/tiposervicoboxlist/tiposervicoboxlist.component';
 
 
 
@@ -79,7 +82,10 @@ import { EditarUnidadeComponent } from '../geral/unidade/editar-unidade/editar-u
     
     {path: 'cadastrounidade' , component: CadastroUnidadeComponent},
     {path: 'unidadelist', component: UnidadeListaComponent},
-    {path: 'editarunidade/:id', component: EditarUnidadeComponent}
+    {path: 'editarunidade/:id', component: EditarUnidadeComponent},
+    {path: 'cadastrotiposervico' , component:CadastrotiposervicoComponent},
+    {path: 'editartiposervico/:id' , component: EditartiposervicoComponent},
+    {path:'tiposervicolist', component: TiposervicoboxlistComponent}
     
     
     

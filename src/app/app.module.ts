@@ -84,6 +84,10 @@ import { CadastroUnidadeComponent } from './geral/unidade/cadastro-unidade/cadas
 import { EditarUnidadeComponent } from './geral/unidade/editar-unidade/editar-unidade.component';
 import { UnidadeListaComponent } from './geral/unidade/unidade-lista/unidade-lista.component';
 import { UnidadeService } from './geral/unidade/unidade.service';
+import { TipoServicosComponent } from './comercial/tipo-servicos/tipo-servicos.component';
+import { CadastrotiposervicoComponent } from './comercial/tipo-servicos/cadastrotiposervico/cadastrotiposervico.component';
+import { TiposervicoboxlistComponent } from './comercial/tipo-servicos/tiposervicoboxlist/tiposervicoboxlist.component';
+import { EditartiposervicoComponent } from './comercial/tipo-servicos/editartiposervico/editartiposervico.component';
 
 
 
@@ -147,7 +151,11 @@ import { UnidadeService } from './geral/unidade/unidade.service';
     EditarfabricanteComponent,
     CadastroUnidadeComponent,
     EditarUnidadeComponent,
-    UnidadeListaComponent
+    UnidadeListaComponent,
+    TipoServicosComponent,
+    CadastrotiposervicoComponent,
+    TiposervicoboxlistComponent,
+    EditartiposervicoComponent
     
 
 
