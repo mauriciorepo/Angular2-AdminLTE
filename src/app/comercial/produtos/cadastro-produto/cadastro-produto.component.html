@@ -12,7 +12,7 @@
     <ul class="nav nav-tabs">
       <li class="active"><a href="#geral" data-toggle="tab" aria-expanded="true">Geral</a></li>
       <li class=""><a href="#estoque" data-toggle="tab" aria-expanded="false">Estoque e Preço</a></li>
-      <li class=""><a href="#settings" data-toggle="tab" aria-expanded="false">Settings</a></li>
+      <!--<li class=""><a href="#settings" data-toggle="tab" aria-expanded="false">Settings</a></li>-->
     </ul>
     
     <form [formGroup]="produtoForm" class="form-horizontal" novalidate (ngSubmit)="cadastroProduto()" >
@@ -74,8 +74,8 @@
         <div class="col-xs-6">
           
             <label class="center-block">Sub_Grupo:
-              <select   class="form-control" formControlName="origem" >
-                <option *ngFor="let subgrupo of subgrupolist" [value]="subgrupo.id">{{subgrupo.descricao}}</option>
+              <select   class="form-control" formControlName="sub_grupo" >
+                <option *ngFor="let sub of subgrupolist" [value]="sub.id">{{sub.descricao}}</option>
                 <option [value]="1" >Nivel 1- Nenhum</option>
                 </select>
             </label>
@@ -123,7 +123,7 @@
                   </div>
                   <h3 class="col-xs-12" style="border-bottom: 2px solid #f4f4f4;">Conversão de Medidas</h3>
         
-        
+                        <!--
                   <div class="col-xs-6">
 
                     <label class="center-block">Unidade Compra:
@@ -160,7 +160,7 @@
                 </div>
               </div>
                 
-            
+            -->
         
                     
               <div class="col-xs-12">
@@ -209,7 +209,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-usd"></i>
                   </div>
-                <input type="text" class="form-control" [disabled]="true" formControlName="preco_promocional" placeholder="">
+                <input type="text" class="form-control"  formControlName="preco_promocional" placeholder="">
                 <show-errors [control]="produtoForm.controls['preco_promocional']"></show-errors>
               </div>
               </div>
@@ -219,23 +219,27 @@
                 <div class="input-group-addon">
                   <i class="fa fa-usd"></i>
                 </div>
-              <input type="text" class="form-control" formControlName="preco_base" placeholder="">
+              <input type="text" class="form-control"  formControlName="preco_base" placeholder="">
               <show-errors [control]="produtoForm.controls['preco_base']"></show-errors>
             </div>
           </div>
-            <div class=" col-xs-6">
+          <div class=" col-xs-6">
                 <label for="inputName" class="">Margem Preço Promocional %</label>
         
-                <input type="text" class="form-control" formControlName="margem_preco_promocional" placeholder="">
+                <input type="text" class="form-control"  formControlName="margem_preco_promocional" placeholder="">
                 <show-errors [control]="produtoForm.controls['margem_preco_promocional']"></show-errors>
               </div>  
           <div class="col-xs-6">
-            
+            <div class="input-group pull-right">
+              <div class="input-group-addon">
+                <i class="fa fa-usd"></i>
+              </div>
                 <label >Margem Preço Base %</label>
-                <input type="text" class="form-control" formControlName="margem_preco_base" placeholder="">  
+                <input type="text" class="form-control" (change)="precoBase()" formControlName="margem_preco_base" placeholder="">  
                 <show-errors [control]="produtoForm.controls['margem_preco_base']"></show-errors>
               </div>
-            <div class="col-xs-6">
+          </div>
+          <div class="col-xs-6">
             
                 <label >Preço Varejo R$:</label>
                 <div class="input-group pull-right">
@@ -298,31 +302,31 @@
                   </div>
                   <div class="col-xs-6">
                       <label>Aliquota PIS</label>
-                      <input type="text" class="form-control" formControlName="alipis">
-                      <show-errors [control]="produtoForm.controls['alipis']"></show-errors>
+                      <input type="text" class="form-control" formControlName="aliqpis">
+                      <show-errors [control]="produtoForm.controls['aliqpis']"></show-errors>
                     </div>
                     <div class="col-xs-6">
                         <label>Confins</label>
-                        <input type="text" class="form-control" formControlName="aliconfins">
-                        <show-errors [control]="produtoForm.controls['aliconfins']"></show-errors>
+                        <input type="text" class="form-control" formControlName="aliqconfins">
+                        <show-errors [control]="produtoForm.controls['aliqconfins']"></show-errors>
                       </div>
             </div>
 
 
       </div>
-      <!-- /.tab-pane -->
+      <!-- /.tab-pane
 
       <div class="tab-pane " id="settings">
         
           
       
-      <!-- /.tab-pane -->
+       /.tab-pane 
     
-    </div>
+    </div>-->
     </div>
     <div class="box-footer clearfix">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-help pull-right" [disabled]="!produtoForm.valid" [class.btn-success]="produtoForm.valid ">Submit</button>
+        <button type="submit" class="btn btn-help pull-right" [disabled]="!produtoForm.valid" [class.btn-success]="produtoForm.valid ">Cadastrar</button>
       </div>
     </div>
 

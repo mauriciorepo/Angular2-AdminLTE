@@ -17,7 +17,7 @@ unidade: Unidade;
     private unidadeService: UnidadeService) { }
 
   ngOnInit() {
-    this.createForm
+    this.createForm();
   }
 
   createForm(){
@@ -34,9 +34,14 @@ unidade: Unidade;
       this.unidade=this.unidadeForm.value;
       this.unidadeService.launchUnits(this.unidade).subscribe(response=>{
         console.log("Lançado");
+        this.reset();
       });
     }
 
+  }
+
+  reset(){
+    this.unidadeForm.reset();
   }
 
 

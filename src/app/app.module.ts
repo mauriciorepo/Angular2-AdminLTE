@@ -88,6 +88,10 @@ import { TipoServicosComponent } from './comercial/tipo-servicos/tipo-servicos.c
 import { CadastrotiposervicoComponent } from './comercial/tipo-servicos/cadastrotiposervico/cadastrotiposervico.component';
 import { TiposervicoboxlistComponent } from './comercial/tipo-servicos/tiposervicoboxlist/tiposervicoboxlist.component';
 import { EditartiposervicoComponent } from './comercial/tipo-servicos/editartiposervico/editartiposervico.component';
+import { TipoSistemasComponent } from './comercial/tipo-sistemas/tipo-sistemas.component';
+import { CadastrotiposistemaComponent } from './comercial/tipo-sistemas/cadastrotiposistema/cadastrotiposistema.component';
+import { TiposistemaboxlistComponent } from './comercial/tipo-sistemas/tiposistemaboxlist/tiposistemaboxlist.component';
+import { EditartiposistemaComponent } from './comercial/tipo-sistemas/editartiposistema/editartiposistema.component';
 
 
 
@@ -155,7 +159,11 @@ import { EditartiposervicoComponent } from './comercial/tipo-servicos/editartipo
     TipoServicosComponent,
     CadastrotiposervicoComponent,
     TiposervicoboxlistComponent,
-    EditartiposervicoComponent
+    EditartiposervicoComponent,
+    TipoSistemasComponent,
+    CadastrotiposistemaComponent,
+    TiposistemaboxlistComponent,
+    EditartiposistemaComponent
     
 
 

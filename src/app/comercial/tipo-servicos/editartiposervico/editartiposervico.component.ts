@@ -27,7 +27,7 @@ export class EditartiposervicoComponent implements OnInit {
      this.sub=this.route.params.subscribe(params=>{
        this.id=params['id'];
        this.tipoServico.findById(this.id).subscribe(tiposervico=>{
-         this.populateTipoServico(tiposervico)
+         this.populateTipoServico(tiposervico);
        });
      })
   }

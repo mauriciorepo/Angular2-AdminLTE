@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Produto } from './produto.model';
 import { XVICTUM_SERVER } from './../../app.api';
@@ -11,7 +11,16 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Accept': 'application/json,text/plain',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
 
+    })
+  };
 
 lancaProduto(prod: Produto):Observable<Produto>{
 

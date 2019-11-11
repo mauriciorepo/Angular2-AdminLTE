@@ -1,0 +1,32 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-envelope"></i>
+
+    <h3 class="box-title">Tipo sistemas | Novo</h3>
+
+  </div>
+  <div class="box-body">
+    <form [formGroup] ="TipoSistemaForm" novalidate (ngSubmit)="cadastroTipoSistema()" >
+
+
+                    <div class="form-group col-xs-12" >
+                      <label >Descrição</label>
+                        <input type="text" name="descricao" class="form-control" formControlName="descricao" autofocus  >
+                        <show-errors [control]="TipoSistemaForm.controls['descricao']"></show-errors>
+                      </div>
+
+                     
+                      
+
+      <div class="box-footer clearfix">
+          <button type="submit" [disabled]="!TipoSistemaForm.valid" [class.btn-success]="TipoSistemaForm.valid" class="pull-right btn btn-primary" >Update
+              <i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+      <!--<p>Form value: {{ editGrupoForm.value | json }}</p>
+      <p>Form status: {{ editGrupoForm.status | json }}</p>-->
+    </form>
+  </div>
+
+
+
+</div>

@@ -41,6 +41,9 @@ import { EditarUnidadeComponent } from '../geral/unidade/editar-unidade/editar-u
 import { CadastrotiposervicoComponent } from '../comercial/tipo-servicos/cadastrotiposervico/cadastrotiposervico.component';
 import { EditartiposervicoComponent } from '../comercial/tipo-servicos/editartiposervico/editartiposervico.component';
 import { TiposervicoboxlistComponent } from '../comercial/tipo-servicos/tiposervicoboxlist/tiposervicoboxlist.component';
+import { CadastrotiposistemaComponent } from '../comercial/tipo-sistemas/cadastrotiposistema/cadastrotiposistema.component';
+import { TiposistemaboxlistComponent } from '../comercial/tipo-sistemas/tiposistemaboxlist/tiposistemaboxlist.component';
+import { EditartiposistemaComponent } from '../comercial/tipo-sistemas/editartiposistema/editartiposistema.component';
 
 
 
@@ -85,7 +88,10 @@ import { TiposervicoboxlistComponent } from '../comercial/tipo-servicos/tiposerv
     {path: 'editarunidade/:id', component: EditarUnidadeComponent},
     {path: 'cadastrotiposervico' , component:CadastrotiposervicoComponent},
     {path: 'editartiposervico/:id' , component: EditartiposervicoComponent},
-    {path:'tiposervicolist', component: TiposervicoboxlistComponent}
+    {path:'tiposervicolist', component: TiposervicoboxlistComponent},
+    {path: 'tiposistemalist', component: TiposistemaboxlistComponent},
+    {path:'cadastrotiposistema',component:CadastrotiposistemaComponent},
+    {path:'editartiposistema/:id' , component: EditartiposistemaComponent}
     
     
     

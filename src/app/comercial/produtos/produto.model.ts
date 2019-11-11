@@ -1,10 +1,13 @@
+import { Fabricante } from "../fabricante/fabricante.model";
+import { Grupo } from "../grupos/grupo.model";
+
 export interface Produto{
 
 
     descricao?: string,
     codbarras?: string,
     ean?: string;
-    fabricante?: string;
+    fabricante?: Fabricante;
     preco_fornecedor?: number;
     preco_base?:number;
     margem_preco_base?: number;
@@ -27,9 +30,11 @@ export interface Produto{
     sticms?: number;
     icmsst?: number;
     aliqipi?: number;
-    alipis?: number;
-    aliconfins?: number;
+    aliqpis?: number;
+    aliqconfins?: number;
     data_atualizacao_custo?: string;
     observacao?: string;
+    grupo?:Grupo;
+    sub_grupo?:Grupo;
     
 }
