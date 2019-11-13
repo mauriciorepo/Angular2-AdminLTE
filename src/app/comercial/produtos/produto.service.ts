@@ -27,5 +27,20 @@ lancaProduto(prod: Produto):Observable<Produto>{
   return this.http.post<Produto>(`${XVICTUM_SERVER}/produtos`, prod );
 
 }
+getProdutos():Observable<Produto[]>{
+   return this.http.get<Produto[]>(`${XVICTUM_SERVER}/produtos`);
+}
+
+getProdutosByFornecedor(){}
+
+removeProdutos(){}
+
+editProduto(id:number, Prod:Produto):Observable<Produto>{
+  return this.http.put<Produto>(`${XVICTUM_SERVER}/produtos${id}`, Prod);
+}
+
+getProdutoById(id:number):Observable<Produto>{
+  return this.http.get<Produto>(`${XVICTUM_SERVER}/produtos/${id}`);
+}
 
 }

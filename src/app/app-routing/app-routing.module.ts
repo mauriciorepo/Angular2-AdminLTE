@@ -44,6 +44,9 @@ import { TiposervicoboxlistComponent } from '../comercial/tipo-servicos/tiposerv
 import { CadastrotiposistemaComponent } from '../comercial/tipo-sistemas/cadastrotiposistema/cadastrotiposistema.component';
 import { TiposistemaboxlistComponent } from '../comercial/tipo-sistemas/tiposistemaboxlist/tiposistemaboxlist.component';
 import { EditartiposistemaComponent } from '../comercial/tipo-sistemas/editartiposistema/editartiposistema.component';
+import { ProdutoboxlistComponent } from '../comercial/produtos/produtoboxlist/produtoboxlist.component';
+import { ProdutolistComponent } from '../comercial/produtos/produtolist/produtolist.component';
+import { DetalheprodutoComponent } from '../comercial/produtos/detalheproduto/detalheproduto.component';
 
 
 
@@ -91,8 +94,9 @@ import { EditartiposistemaComponent } from '../comercial/tipo-sistemas/editartip
     {path:'tiposervicolist', component: TiposervicoboxlistComponent},
     {path: 'tiposistemalist', component: TiposistemaboxlistComponent},
     {path:'cadastrotiposistema',component:CadastrotiposistemaComponent},
-    {path:'editartiposistema/:id' , component: EditartiposistemaComponent}
-    
+    {path:'editartiposistema/:id' , component: EditartiposistemaComponent},
+    {path:'produtolist', component:ProdutolistComponent},
+  {path:'detalheproduto/:id',component:DetalheprodutoComponent}
     
     
     

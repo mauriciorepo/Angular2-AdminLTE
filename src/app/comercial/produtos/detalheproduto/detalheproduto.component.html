@@ -1,0 +1,121 @@
+<section class="invoice">
+  <!-- title row -->
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="page-header">
+        <i class="fa fa-barcode"></i> Produto
+
+         <small *ngIf="active" class="pull-right label bg-aqua"><i  class="fa fa-check-square-o " ></i>  Ativo</small>
+        <small *ngIf="!active" class="pull-right label label-danger"><i  class="fa fa-minus-square " ></i>  Inativo</small>
+        
+      </h2>
+      <strong>{{produto.descricao}}</strong> 
+      <small class="pull-right"><b>Date: {{today | date: 'dd/MM/yyyy'}} </b>     </small>
+    </div>
+    <!-- /.col -->
+  </div>
+  <hr>
+  <!-- info row -->
+  <div class="row invoice-info">
+    <div class="col-sm-6 invoice-col">
+      
+      <address>
+        <strong>Informações do produto</strong><br>
+         <br>
+        <b>Produto: </b> {{produto.descricao}}<br>
+        <b>Fabricante: </b> {{produto.fabricante.descricao}}<br>
+        <b>Grupo: </b>{{produto.grupo.descricao}}<br>
+        <b>Sub Grupo: </b>{{produto.sub_grupo.descricao}}  <br>
+        <b>Data Fabricação: </b> {{ produto.datafabricacao }}<br>
+        <b>Volume: </b> {{produto.volume}}<br>
+        <b>Peso: </b> {{produto.peso}}<br>
+        <b>Data Inclusão: </b> {{produto.data_inclusao}}<br>
+      </address>
+    </div>
+    <!--col-->
+    
+    <div class="col-sm-6 invoice-col">
+      <strong> Estoque </strong><br>
+      <br>
+      <b>ID:  </b> {{produto.id}}<br>
+      <img class="img-responsive" src="../../assets/img/oleomotorcraft.jpg" alt="Visa"><br>
+      <b>Codigo de Barras</b>{{produto.codbarras}}
+    </div>
+
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+  
+  <div class="row">
+    <h2>Estoque | Preço</h2>
+    <hr>
+    <div class="col-sm-6 invoice-col">
+        <b>Tributos </b><br>
+        <br>
+        <b>ID:</b> {{produto.id}}<br>
+        <b>ICMS:</b>  {{produto.icms}}<br>
+        <b>Confins:</b>  {{produto.aliqconfins}}<br>
+        <b>:</b>{{produto.aliqipi}}
+        <b>Codigo de Barras</b>{{produto.codbarras}}
+      </div>
+  
+    <div class="col-sm-6 invoice-col">
+
+        <b>Estoque </b><br>
+        <br>
+        <b>Estoque Maximo:</b> {{produto.estoque_maximo}}<br>
+        <b>Estoque Minimo:</b>  {{produto.estoque_minimo}}<br>
+        <b>EAN:</b>  {{produto.ean}}<br>
+        <b>IPI:</b>{{produto.aliqipi}}
+        <b>Codigo de Barras</b>{{produto.codbarras}}
+      </div>
+    
+<!--
+     <div class="col-xs-12">
+      <p class="lead">Produto cadastrado: {{produto.data_inclusao | date: 'dd/MM/yyyy' }}</p>
+
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+
+              <tr>
+                  <th>ID</th>
+                  <th>Contato</th>
+                  <th>Telefone</th>
+                  <th>Preço</th>
+                  
+
+
+
+
+                </tr>
+                <tr *ngFor="let veiculo of cliente.veiculo ">
+                  <td>1</td>
+                  <td>Oleo</td>
+                   <td>
+
+                  </td>
+                  <td>65,30 </td>
+                  </tr>
+
+        </tbody></table>
+      </div>
+    </div>
+-->
+  </div>
+  <!-- /.row -->
+
+  <!-- this row will not appear when printing -->
+  <div class="row no-print">
+    <div class="col-xs-12">
+      <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+      <button type="button" (click)="updateProduto()" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i>  Editar
+      </button>
+      <button type="button" (click)="addFornecedor()" class="btn btn-primary pull-right" style="margin-right: 5px;">
+        <i class="fa fa-plus-square"></i>   Veículo
+      </button>
+    </div>
+  </div>
+</section>
+

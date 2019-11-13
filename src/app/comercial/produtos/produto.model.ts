@@ -3,7 +3,7 @@ import { Grupo } from "../grupos/grupo.model";
 
 export interface Produto{
 
-
+    id?:number;
     descricao?: string,
     codbarras?: string,
     ean?: string;
@@ -16,7 +16,7 @@ export interface Produto{
     preco_varejo?: number;
     data_inclusao?:string;
     data_alteracao?: string;
-    ativo?: string;
+    ativo?: boolean;
     peso_bruto?: number;
     volume?: number;
     lote?: string;

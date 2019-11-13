@@ -92,6 +92,12 @@ import { TipoSistemasComponent } from './comercial/tipo-sistemas/tipo-sistemas.c
 import { CadastrotiposistemaComponent } from './comercial/tipo-sistemas/cadastrotiposistema/cadastrotiposistema.component';
 import { TiposistemaboxlistComponent } from './comercial/tipo-sistemas/tiposistemaboxlist/tiposistemaboxlist.component';
 import { EditartiposistemaComponent } from './comercial/tipo-sistemas/editartiposistema/editartiposistema.component';
+import { ProdutoService } from './comercial/produtos/produto.service';
+//import { ProdutoboxlistComponent } from './comercial/produtos/produtoboxlist/produtoboxlist.component';
+import { ProdutolistComponent } from './comercial/produtos/produtolist/produtolist.component';
+import { DetalheprodutoComponent } from './comercial/produtos/detalheproduto/detalheproduto.component';
+import { EditarprodutoComponent } from './comercial/produtos/editarproduto/editarproduto.component';
+
 
 
 
@@ -163,7 +169,14 @@ import { EditartiposistemaComponent } from './comercial/tipo-sistemas/editartipo
     TipoSistemasComponent,
     CadastrotiposistemaComponent,
     TiposistemaboxlistComponent,
-    EditartiposistemaComponent
+    EditartiposistemaComponent,
+    
+    ProdutolistComponent,
+    
+    DetalheprodutoComponent,
+    
+    EditarprodutoComponent,
+    
     
 
 
@@ -189,6 +202,7 @@ import { EditartiposistemaComponent } from './comercial/tipo-sistemas/editartipo
      VeiculoService,
      DatePipe,
      UnidadeService,
+     ProdutoService,
 
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorBackEnd, multi: true},
    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorJson, multi: true},

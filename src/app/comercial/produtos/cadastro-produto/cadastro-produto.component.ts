@@ -58,7 +58,7 @@ createFormProduto(){
     ativo: new FormControl(true),
     descricao: ['',[Validators.maxLength(255),Validators.minLength(3),Validators.required]],
     
-    ean: ['',Validators.maxLength(255)],
+    ean: ['',[Validators.maxLength(13),Validators.minLength(13)]],
     fabricante: ['',Validators.required],
     codbarras:['',Validators.maxLength(255)],
     data_fabricacao: ['', Validators.maxLength(10)], 
@@ -84,7 +84,7 @@ createFormProduto(){
     data_alteracao:['',Validators.maxLength(10)],
     peso_bruto: ['',Validators.maxLength(5)],
     volume: ['',[Validators.max(5),Validators.pattern(VOLUME)]],
-    grupo: [''],
+    grupo: ['',Validators.required],
     
     sub_grupo: ['',Validators.required],
     //unidade_entrada: ['', Validators.required],
