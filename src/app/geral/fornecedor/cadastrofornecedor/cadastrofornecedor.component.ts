@@ -48,6 +48,7 @@ constructor(private fb: FormBuilder, private fornecedorService: FornecedorServic
        cep: ['', [Validators.maxLength(9), Validators.minLength(8)]],
        telefone: ['', Validators.required],
        telefone2: [''],
+       cidade:['',[Validators.required,Validators.maxLength(255)]],
        homepage: [null, [Validators.maxLength(255)]],
        logradouro: [null, [Validators.maxLength(255)]],
        bairro: [null, [Validators.maxLength(255)]]

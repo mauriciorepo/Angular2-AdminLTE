@@ -94,12 +94,19 @@
 
           </div>
 
-      <div class="form-group col-xs-6">
+      <div class="form-group col-xs-3">
             <label>Bairro</label>
             <input type="text" class="form-control" formControlName="bairro" placeholder="">
             <show-errors [control]="fornecedorUpdateForm.controls['bairro']"></show-errors>
 
           </div>
+          <div class="form-group col-xs-3">
+              <label>Cidade</label>
+              <input type="text" class="form-control" formControlName="cidade" placeholder="">
+              <show-errors [control]="fornecedorUpdateForm.controls['cidade']"></show-errors>
+    
+            </div>
+    
 
      </div>
 
@@ -155,7 +162,7 @@
        </div>
 
        <div class="box-footer clearfix">
-          <button type="submit" [disabled]="!fornecedorUpdateForm.valid" [class.btn-success]="fornecedorUpdateForm.valid " class="pull-right btn btn-primary" id="sendEmail">Cadastrar
+          <button type="submit" [disabled]="!fornecedorUpdateForm.valid" [class.btn-success]="fornecedorUpdateForm.valid " class="pull-right btn btn-primary" id="sendEmail">Atualizar
               <i class="fa fa-arrow-circle-right"></i></button>
         </div>
        <!-- <p>Form value: {{ fornecedorForm.value | json }}</p>

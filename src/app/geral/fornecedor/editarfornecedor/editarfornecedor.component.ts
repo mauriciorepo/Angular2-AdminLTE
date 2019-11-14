@@ -54,6 +54,7 @@ createForm() {
      cpf: ['', [Validators.maxLength(14), Validators.minLength(14), Validators.pattern(CPF)]],
      rg: ['', [Validators.maxLength(18), Validators.minLength(5)]],
      numero: [''],
+     cidade:['',[Validators.required,Validators.maxLength(255)]],
      complemento: [null, [Validators.maxLength(255)]],
      cep: ['', [Validators.maxLength(9), Validators.minLength(8)]],
      telefone: ['', Validators.required],
@@ -85,7 +86,7 @@ fullUpdate(forn: Fornecedor ) {
     cep: conformToMask(forn.cep, this.mask.cepMask, {guide: false}).conformedValue,
     logradouro: forn.logradouro,
     numero: forn.numero,
-
+    cidade: forn.cidade,
     complemento: forn.complemento,
     bairro: forn.bairro,
     // ibge:forn.ibge,

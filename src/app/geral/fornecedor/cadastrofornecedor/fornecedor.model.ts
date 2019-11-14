@@ -31,6 +31,7 @@ export interface Fornecedor{
   homepage?:string;
   datainc?:string;
   version?:number;
+  cidade?:string;
 
 
 
