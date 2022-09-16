@@ -32,7 +32,7 @@
     "admin-lte": "2.3.11",
     "ajv": "^6.0.1",
     "angular2-text-mask": "^8.0.5",
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "bootstrap-datepicker": "^1.7.1",
     "bootstrap3-wysihtml5-bower": "^0.3.3",
     "core-js": "2.5.4",
